@@ -6,7 +6,7 @@
 #    By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 12:29:58 by tgernez           #+#    #+#              #
-#    Updated: 2023/05/17 12:40:06 by tgernez          ###   ########.fr        #
+#    Updated: 2023/05/17 12:44:42 by tgernez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,12 @@ INCL	= -I includes
 SRCS	=	$(addsuffix .cpp,		\
 			$(addprefix srcs/,		\
 				main				\
-				PhoneBook.class		\
 			))
-OBJS	= ${SRCS:.cpp=.o}
+CLAS	= 	$(addsuffix .class.cpp,	\
+			$(addprefix classes/,	\
+				PhoneBook			\
+			))
+OBJS	= ${SRCS:.cpp=.o} ${CLAS:.cpp=.o}
 RM		= rm -rf
 RED		= \033[1;31m
 NC		= \033[0m
