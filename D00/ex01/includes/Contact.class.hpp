@@ -6,12 +6,14 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 12:45:30 by tgernez           #+#    #+#             */
-/*   Updated: 2023/05/17 14:01:04 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/05/17 18:01:22 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-
+#ifndef CONTACT_CLASS_HPP
+# define CONTACT_CLASS_HPP
+# include "PhoneBook.hpp"
+# include <string>
 class Contact
 {
 	private:
@@ -34,4 +36,4 @@ class Contact
 		std::string get_darkest_secret(void);
 		~Contact(void);
 };
-
+#endif
