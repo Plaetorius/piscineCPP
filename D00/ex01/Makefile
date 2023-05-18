@@ -6,7 +6,7 @@
 #    By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 12:29:58 by tgernez           #+#    #+#              #
-#    Updated: 2023/05/17 12:44:42 by tgernez          ###   ########.fr        #
+#    Updated: 2023/05/18 10:13:41 by tgernez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRCS	=	$(addsuffix .cpp,		\
 CLAS	= 	$(addsuffix .class.cpp,	\
 			$(addprefix classes/,	\
 				PhoneBook			\
+				Contact				\
 			))
 OBJS	= ${SRCS:.cpp=.o} ${CLAS:.cpp=.o}
 RM		= rm -rf

@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 12:45:30 by tgernez           #+#    #+#             */
-/*   Updated: 2023/05/17 18:01:22 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/05/18 10:25:26 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,8 @@ class Contact
 		std::string	darkest_secret;
 
 	public:
-		Contact(std::string	first_name,
-				std::string	last_name,
-				std::string	nickname,
-				std::string	phone_number,
-				std::string darkest_secret);
+		Contact(void);
+		Contact(std::string	first_name, std::string	last_name, std::string nickname, std::string phone_number, std::string darkest_secret);
 		std::string get_first_name(void);
 		std::string get_last_name(void);
 		std::string get_nickname(void);

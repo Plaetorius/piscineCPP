@@ -6,25 +6,33 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:18:34 by tgernez           #+#    #+#             */
-/*   Updated: 2023/05/17 18:13:25 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/05/18 11:12:05 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
+Contact::Contact(void)
+{
+	first_name = "";
+	last_name = "";
+	nickname = "";
+	phone_number = "";
+	darkest_secret = "";
+	return ;
+}
+
 Contact::Contact(std::string first_name,
 				std::string last_name,
-				std::string	nickname,
+				std::string nickname,
 				std::string phone_number,
 				std::string darkest_secret)
-				:
-				first_name(std::move(first_name)),
-				last_name(std::move(last_name)),
-				nickname(std::move(nickname)),
-				phone_number(std::move(phone_number)),
-				darkest_secret(std::move(darkest_secret))
 {
-	return ;
+	this->first_name = first_name;
+	this->last_name = last_name;
+	this->nickname = nickname;
+	this->phone_number = phone_number;
+	this->darkest_secret = darkest_secret;
 }
 
 std::string Contact::get_first_name(void)
@@ -54,6 +62,5 @@ std::string Contact::get_darkest_secret(void)
 
 Contact::~Contact(void)
 {
-	std::cout << "Destructed a contact" << std::endl;
 	return ;
 }
