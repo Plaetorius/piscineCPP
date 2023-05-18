@@ -93,7 +93,18 @@ void Account::displayStatus() const
 
 void Account::_displayTimestamp()
 {
-    std::cout << "[" << __DATE__ << "_" << __TIME__ << "] ";
+    std::time_t currentTime = std::time(nullptr);
+    std::tm* localTime = std::localtime(&currentTime);
+
+    std::cout << "["
+              << std::setfill('0') << std::setw(4) << localTime->tm_year + 1900
+              << std::setfill('0') << std::setw(2) << localTime->tm_mon + 1
+              << std::setfill('0') << std::setw(2) << localTime->tm_mday
+              << "_"
+              << std::setfill('0') << std::setw(2) << localTime->tm_hour
+              << std::setfill('0') << std::setw(2) << localTime->tm_min
+              << std::setfill('0') << std::setw(2) << localTime->tm_sec
+              << "] ";
 }
 
 int Account::_nbAccounts = 0;
