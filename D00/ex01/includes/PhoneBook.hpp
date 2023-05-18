@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 12:33:46 by tgernez           #+#    #+#             */
-/*   Updated: 2023/05/17 13:20:40 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/05/18 16:49:48 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,5 @@
 # include "Contact.class.hpp"
 # include <iostream>
 # include <string>
+# include <cstdlib>
 #endif

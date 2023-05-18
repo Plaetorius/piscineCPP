@@ -6,11 +6,29 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 12:29:55 by tgernez           #+#    #+#             */
-/*   Updated: 2023/05/18 11:22:49 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/05/18 16:51:57 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+bool	safe_getline(std::string *str)
+{
+	if (!std::getline(std::cin, *str))
+	{
+		if (std::cin.eof())
+		{
+			std::cout << "EOF. End of program." << std::endl;
+			return (false);
+		}
+		else
+		{
+			std::cout << "Input error occurred. End of program" << std::endl;
+			return (false);
+		}
+	}
+	return (true);
+}
 
 void	create_contact(PhoneBook *phone_book)
 {
@@ -23,15 +41,35 @@ void	create_contact(PhoneBook *phone_book)
 	while (true)
 	{
 		std::cout << "Please enter a first name" << std::endl;
-		std::getline(std::cin, first_name);
+		if (!safe_getline(&first_name))
+		{
+			std::exit(EXIT_FAILURE);
+			return ;
+		}
 		std::cout << "Please enter a last name" << std::endl;
-		std::getline(std::cin, last_name);
+		if (!safe_getline(&last_name))
+		{
+			std::exit(EXIT_FAILURE);
+			return ;
+		}
 		std::cout << "Please enter a  nickname" << std::endl;
-		std::getline(std::cin, nickname);
+		if (!safe_getline(&nickname))
+		{
+			std::exit(EXIT_FAILURE);
+			return ;
+		}
 		std::cout << "Please enter a phone number" << std::endl;
-		std::getline(std::cin, phone_number);
+		if (!safe_getline(&phone_number))
+		{
+			std::exit(EXIT_FAILURE);
+			return ;
+		}
 		std::cout << "Please enter a darkest secret" << std::endl;
-		std::getline(std::cin, darkest_secret);
+		if (!safe_getline(&darkest_secret))
+		{
+			std::exit(EXIT_FAILURE);
+			return ;
+		}
 		if (first_name.empty() || last_name.empty() || nickname.empty() || phone_number.empty() || darkest_secret.empty())
 			std::cout << "You can't have an empty field. Please try again" << std::endl ;
 		else
@@ -43,14 +81,15 @@ void	create_contact(PhoneBook *phone_book)
 
 int main()
 {
-	PhoneBook	phone_book;
-	std::string	entry = "";
+	PhoneBook phone_book;
+	std::string entry = "";
 
-	std::cout << "Welcome to your PhoneBook!" << std::endl; 
+	std::cout << "Welcome to your PhoneBook!" << std::endl;
 	while (true)
 	{
 		std::cout << "Please enter one of the three commands: ADD, SEARCH, EXIT" << std::endl;
-		std::getline(std::cin, entry);
+		if (!safe_getline(&entry))
+			break ;
 		if (entry == "ADD")
 		{
 			create_contact(&phone_book);
@@ -59,14 +98,18 @@ int main()
 		{
 			phone_book.display_all_contacts();
 			std::cout << "Please enter the index of the contact you want to see" << std::endl;
-			std::getline(std::cin, entry);
-			phone_book.display_single_contact(std::stoi(entry));
-		}
-		else if (entry == "EXIT")
-			break ;
-		else
-			std::cout << "Please enter a valid command" << std::endl;
-	}
-
-	return (EXIT_SUCCESS);
+			if (!safe_getline(&entry))
+				break ;
+            phone_book.display_single_contact(std::stoi(entry));
+        }
+        else if (entry == "EXIT")
+        {
+            break;
+        }
+        else
+        {
+            std::cout << "Please enter a valid command" << std::endl;
+        }
+    }
+    return (EXIT_SUCCESS);
 }
