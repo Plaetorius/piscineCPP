@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.cpp                                  :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:18:34 by tgernez           #+#    #+#             */
-/*   Updated: 2023/05/18 11:12:05 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/14 16:19:17 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ Contact::Contact(void)
 	nickname = "";
 	phone_number = "";
 	darkest_secret = "";
-	return ;
 }
 
 Contact::Contact(std::string first_name,
@@ -60,7 +59,4 @@ std::string Contact::get_darkest_secret(void)
 	return (darkest_secret);
 }
 
-Contact::~Contact(void)
-{
-	return ;
-}
+Contact::~Contact(void) {}

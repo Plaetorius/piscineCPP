@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.hpp                                  :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 12:45:30 by tgernez           #+#    #+#             */
-/*   Updated: 2023/05/18 10:25:26 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/14 16:15:56 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_CLASS_HPP
-# define CONTACT_CLASS_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 # include "PhoneBook.hpp"
 # include <string>
 class Contact

@@ -6,7 +6,7 @@
 #    By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 12:29:58 by tgernez           #+#    #+#              #
-#    Updated: 2023/05/18 10:13:41 by tgernez          ###   ########.fr        #
+#    Updated: 2023/06/14 16:18:14 by tgernez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRCS	=	$(addsuffix .cpp,		\
 			$(addprefix srcs/,		\
 				main				\
 			))
-CLAS	= 	$(addsuffix .class.cpp,	\
+CLAS	= 	$(addsuffix .cpp,	\
 			$(addprefix classes/,	\
 				PhoneBook			\
 				Contact				\

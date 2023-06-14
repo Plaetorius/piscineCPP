@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 12:33:18 by tgernez           #+#    #+#             */
-/*   Updated: 2023/05/18 11:21:59 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/14 16:19:30 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,4 @@ void	PhoneBook::display_single_contact(int index)
 	return ;
 }
 
-PhoneBook::~PhoneBook(void)
-{
-	return ;
-}
+PhoneBook::~PhoneBook(void) {}

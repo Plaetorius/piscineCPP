@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   PhoneBookClass.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 12:29:46 by tgernez           #+#    #+#             */
-/*   Updated: 2023/05/18 11:22:27 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/14 16:17:08 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_HPP
-# define PHONEBOOK_CLASS_HPP
-# include "Contact.class.hpp"
+#ifndef PHONEBOOKCLASS_HPP
+# define PHONEBOOKCLASS_HPP
+# include "Contact.hpp"
 # include <string>
 
 class PhoneBook
