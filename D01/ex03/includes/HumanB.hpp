@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:35:51 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/14 16:21:58 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/14 17:00:23 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 # include <string>
 # include <iostream>
 
-class Zombie
+class HumanB
 {
 	private:
 		std::string name;
 	public:
-		Zombie(void);
-		Zombie(std::string desired_name);
-		void announce(void);
-		~Zombie(void);
+		HumanB(void);
+		HumanB(std::string desired_name);
+		~HumanB(void);
 };
 #endif

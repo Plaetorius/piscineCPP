@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 20:35:51 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/14 16:21:58 by tgernez          ###   ########.fr       */
+/*   Created: 2023/06/11 13:31:05 by tgernez           #+#    #+#             */
+/*   Updated: 2023/06/13 21:32:13 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
-# include <string>
-# include <iostream>
+#include "Zombie.hpp"
 
-class Zombie
+Zombie* zombieHorde(int N, std::string name);
+
+int main()
 {
-	private:
-		std::string name;
-	public:
-		Zombie(void);
-		Zombie(std::string desired_name);
-		void announce(void);
-		~Zombie(void);
-};
-#endif
+	int				N = 5;
+	std::string		name = "Bobs";
+	Zombie*			horde = zombieHorde(N, name);
+	
+	if (!horde)
+	{
+		std::cout << "Horde is nullptr" << std::endl;
+		return (1);
+	}
+	for (int i = 0; i < N; ++i)
+	{
+		horde[i].announce();
+	}
+	delete[] horde;
+	return (0);
+}

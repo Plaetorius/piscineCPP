@@ -6,7 +6,7 @@
 #    By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 12:29:58 by tgernez           #+#    #+#              #
-#    Updated: 2023/06/13 21:10:01 by tgernez          ###   ########.fr        #
+#    Updated: 2023/06/14 16:18:06 by tgernez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCS	=	$(addsuffix .cpp,		\
 				newZombie			\
 				randomChump			\
 			))
-CLAS	= 	$(addsuffix .class.cpp,	\
+CLAS	= 	$(addsuffix .cpp,	\
 			$(addprefix classes/,	\
 				Zombie				\
 			))

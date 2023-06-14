@@ -6,11 +6,11 @@
 #    By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 12:29:58 by tgernez           #+#    #+#              #
-#    Updated: 2023/06/14 17:01:16 by tgernez          ###   ########.fr        #
+#    Updated: 2023/06/14 17:02:18 by tgernez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= horde
+NAME	= unnecessary_violence
 CC		= c++
 FLAGS	= -Wall -Wextra -Werror
 C98		= -std=c++98
@@ -18,11 +18,12 @@ INCL	= -I includes
 SRCS	=	$(addsuffix .cpp,		\
 			$(addprefix srcs/,		\
 				main				\
-				zombieHorde			\
 			))
-CLAS	= 	$(addsuffix .cpp,		\
+CLAS	= 	$(addsuffix .cpp,	\
 			$(addprefix classes/,	\
-				Zombie				\
+				HumanA				\
+				HumanB				\
+				Weapon				\
 			))
 OBJS	= ${SRCS:.cpp=.o} ${CLAS:.cpp=.o}
 RM		= rm -rf

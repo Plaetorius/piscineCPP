@@ -6,25 +6,19 @@
 #    By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 12:29:58 by tgernez           #+#    #+#              #
-#    Updated: 2023/06/14 17:01:16 by tgernez          ###   ########.fr        #
+#    Updated: 2023/06/14 16:45:26 by tgernez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= horde
+NAME	= hithisisbrain
 CC		= c++
 FLAGS	= -Wall -Wextra -Werror
 C98		= -std=c++98
 INCL	= -I includes
 SRCS	=	$(addsuffix .cpp,		\
-			$(addprefix srcs/,		\
 				main				\
-				zombieHorde			\
-			))
-CLAS	= 	$(addsuffix .cpp,		\
-			$(addprefix classes/,	\
-				Zombie				\
-			))
-OBJS	= ${SRCS:.cpp=.o} ${CLAS:.cpp=.o}
+			)
+OBJS	= ${SRCS:.cpp=.o}
 RM		= rm -rf
 RED		= \033[1;31m
 NC		= \033[0m

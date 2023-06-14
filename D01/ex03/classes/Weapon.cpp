@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 20:35:51 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/14 16:21:58 by tgernez          ###   ########.fr       */
+/*   Created: 2023/06/13 20:39:11 by tgernez           #+#    #+#             */
+/*   Updated: 2023/06/14 17:12:42 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
-# include <string>
-# include <iostream>
+#include "Weapon.hpp"
 
-class Zombie
+/*
+	The second const is used to guarantee the 'const'ness of the function, thus
+	allowing it to be called on const Weapon variables
+*/
+
+const std::string& Weapon::getType() const
 {
-	private:
-		std::string name;
-	public:
-		Zombie(void);
-		Zombie(std::string desired_name);
-		void announce(void);
-		~Zombie(void);
-};
-#endif
+	return type;
+}
+
+void setType(std::string weapon_type);
