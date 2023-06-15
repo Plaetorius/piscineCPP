@@ -6,11 +6,12 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:39:11 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/14 18:49:00 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/15 15:46:15 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
+#include "Weapon.hpp"
 #include <string>
 #include <iostream>
 
@@ -25,18 +26,11 @@ void	HumanB::attack(void)
 		std::cout << name << " attacks with their " << weapon->getType() << std::endl;
 	else
 		std::cout << name << " attacks with their hands" << std::endl;
-
 }
 
-void	HumanB::setWeapon(Weapon new_weapon)
+void	HumanB::setWeapon(Weapon &new_weapon)
 {
-	if (weapon)
-		delete weapon;
-	weapon = new Weapon(new_weapon.getType());
+	this->weapon = &new_weapon;
 }
 
-HumanB::~HumanB(void) 
-{
-	if (weapon)
-		delete weapon;	
-}
+HumanB::~HumanB(void) {}

@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:35:51 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/14 18:28:11 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/15 15:42:33 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class HumanB
 	public:
 		HumanB(std::string name);
 		void	attack(void);
-		void	setWeapon(Weapon new_weapon);
+		void	setWeapon(Weapon &new_weapon);
 		~HumanB(void);
 };
 #endif

@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:35:51 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/14 18:32:39 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/15 15:17:37 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Weapon
 		Weapon(void);
 		Weapon(std::string type);
 		const std::string& getType(void) const;
-		void setType(std::string weapon_type);
+		void setType(const std::string& weapon_type);
 		~Weapon(void);
 };
 #endif
