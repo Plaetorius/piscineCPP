@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:39:11 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/15 15:46:23 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/16 20:10:36 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 # include <string>
 # include <iostream>
 
-HumanA::HumanA(std::string name, Weapon& weapon) : name(name), weapon(weapon) {}
+HumanA::HumanA(std::string name, Weapon& weapon) : _name(name), _weapon(weapon) {}
 
 void	HumanA::attack(void)
 {
-	std::cout << name << " attacks with their " << weapon.getType() << std::endl;
+	std::cout << _name << " attacks with their " << _weapon.getType() << std::endl;
 }
 
 HumanA::~HumanA(void) {}

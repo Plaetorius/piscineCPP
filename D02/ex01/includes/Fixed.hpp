@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 20:35:51 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/16 20:09:37 by tgernez          ###   ########.fr       */
+/*   Created: 2023/06/15 17:47:38 by tgernez           #+#    #+#             */
+/*   Updated: 2023/06/16 23:06:23 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
-# include <string>
+#ifndef FIXED_HPP
+# define FIXED_HPP
 # include <iostream>
 
-class Zombie
+class Fixed
 {
 	private:
-		std::string _name;
+		int _fixed_value;
+		static const int _fixed_length = 8;
 	public:
-		Zombie(void);
-		Zombie(std::string desired_name);
-		void announce(void);
-		~Zombie(void);
+		Fixed();
+		Fixed(const Fixed &obj);
+		Fixed(const int value);
+		Fixed(const float value);
+		float	toFloat(void) const;
+		int		toInt(void) const;
+		int		getRawBits(void) const;
+		void	setRawBits(const int raw_bits);	
+		Fixed&	operator=(const Fixed &obj);
+		~Fixed();
 };
+std::ostream&	operator<<(std::ostream& os, const Fixed &obj);
+
 #endif

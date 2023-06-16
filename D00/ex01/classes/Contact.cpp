@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:18:34 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/14 16:19:17 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/16 20:03:53 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 Contact::Contact(void)
 {
-	first_name = "";
-	last_name = "";
-	nickname = "";
-	phone_number = "";
-	darkest_secret = "";
+	_first_name = "";
+	_last_name = "";
+	_nickname = "";
+	_phone_number = "";
+	_darkest_secret = "";
 }
 
 Contact::Contact(std::string first_name,
@@ -27,36 +27,36 @@ Contact::Contact(std::string first_name,
 				std::string phone_number,
 				std::string darkest_secret)
 {
-	this->first_name = first_name;
-	this->last_name = last_name;
-	this->nickname = nickname;
-	this->phone_number = phone_number;
-	this->darkest_secret = darkest_secret;
+	this->_first_name = first_name;
+	this->_last_name = last_name;
+	this->_nickname = nickname;
+	this->_phone_number = phone_number;
+	this->_darkest_secret = darkest_secret;
 }
 
 std::string Contact::get_first_name(void)
 {
-	return (first_name);
+	return (_first_name);
 }
 
 std::string Contact::get_last_name(void)
 {
-	return (last_name);
+	return (_last_name);
 }
 
 std::string Contact::get_nickname(void)
 {
-	return (nickname);
+	return (_nickname);
 }
 
 std::string Contact::get_phone_number(void)
 {
-	return (phone_number);
+	return (_phone_number);
 }
 
 std::string Contact::get_darkest_secret(void)
 {
-	return (darkest_secret);
+	return (_darkest_secret);
 }
 
 Contact::~Contact(void) {}

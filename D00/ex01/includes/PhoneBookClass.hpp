@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 12:29:46 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/14 16:17:08 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/16 20:04:09 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 class PhoneBook
 {
 	private:
-		Contact	contacts[8];
-		int	nb_contacts;
-		int oldest;
+		Contact	_contacts[8];
+		int	_nb_contacts;
+		int _oldest;
 
 	public:
 		PhoneBook(void);

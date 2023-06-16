@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:35:51 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/15 15:17:37 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/16 20:10:19 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 class Weapon
 {
 	private:
-		std::string type;
+		std::string _type;
 	public:
 		Weapon(void);
 		Weapon(std::string type);

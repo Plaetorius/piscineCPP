@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:35:51 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/14 18:14:19 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/16 20:10:09 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 class HumanA
 {
 	private:
-		std::string	name;
-		Weapon&		weapon;
+		std::string	_name;
+		Weapon&		_weapon;
 	public:
 		HumanA(std::string name, Weapon &weapon);
 		void	attack(void);

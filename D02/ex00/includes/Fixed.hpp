@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 17:47:38 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/16 11:40:36 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/16 20:13:30 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 class Fixed
 {
 	private:
-		int fixed_value;
-		static const int fixed_length = 8;
+		int _fixed_value;
+		static const int _fixed_length = 8;
 	public:
 		Fixed();
 		Fixed(const Fixed &obj);

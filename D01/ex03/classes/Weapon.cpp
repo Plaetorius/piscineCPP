@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:39:11 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/15 15:45:08 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/16 20:11:24 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@
 	allowing it to be called on const Weapon variables
 */
 
-Weapon::Weapon(std::string type) : type(type) {}
+Weapon::Weapon(std::string type) : _type(type) {}
 
 const std::string& Weapon::getType() const
 {
-	const std::string& string_ref = this->type;
+	const std::string& string_ref = this->_type;
 	return string_ref;
 }
 
 void Weapon::setType(const std::string& new_type)
 {
-	this->type = new_type;
+	this->_type = new_type;
 }
 
 Weapon::~Weapon (void) {}
