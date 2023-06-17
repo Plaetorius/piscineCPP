@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animals.hpp                                        :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 17:04:55 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 17:23:27 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/17 19:43:13 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMALS_HPP
-# define ANIMALS_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 # include <string>
 
-class Animals
+class WrongAnimal
 {
 	protected:
 		std::string _type;
 	public:
-		Animals();
-		Animals(const Animals &obj);
-		virtual void makeSound() const = 0;	
-		Animals& operator=(const Animals &rhs);
-		~Animals();
+		WrongAnimal();
+		WrongAnimal(const WrongAnimal &obj);
+		void makeSound() const;	
+		const std::string getType() const;
+		WrongAnimal& operator=(const WrongAnimal &rhs);
+		~WrongAnimal();
 };
 #endif

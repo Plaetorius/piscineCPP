@@ -6,7 +6,7 @@
 #    By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 12:29:58 by tgernez           #+#    #+#              #
-#    Updated: 2023/06/17 17:04:44 by tgernez          ###   ########.fr        #
+#    Updated: 2023/06/17 18:50:48 by tgernez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,11 @@ SRCS	=	$(addsuffix .cpp,		\
 			))
 CLAS	= 	$(addsuffix .cpp,		\
 			$(addprefix classes/,	\
-				Animals			\
-				Cats			\
-				Dogs			\
+				Animal			\
+				Cat				\
+				Dog				\
+				WrongAnimal		\
+				WrongCat		\
 			))
 OBJS	= ${SRCS:.cpp=.o} ${CLAS:.cpp=.o}
 RM		= rm -rf
