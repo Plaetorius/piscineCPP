@@ -1,59 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 11:42:42 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 16:31:43 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/17 13:27:40 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 #include <iostream>
 #include <string>
 
-ScavTrap::ScavTrap() : ClapTrap()
+ClapTrap::ClapTrap()
 {
-	std::cout << "ScavTrap Default constructor called" << std::endl;
-	this->_name = "defaultScavTrap";
-	this->_hp = 100;
-	this->_ep = 50;
-	this->_ad = 20;
+	std::cout << "ClapTrap Default constructor called" << std::endl;
+	_name = "defaultClapTrap";
+	_hp = 10;
+	_ep = 10;
+	_ad = 0;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+ClapTrap::ClapTrap(const ClapTrap &obj)
 {
-	std::cout << "ScavTrap String constructor called" << std::endl;
-	this->_hp = 100;
-	this->_ep = 50;
-	this->_ad = 20;
-}
-
-ScavTrap::ScavTrap(const ScavTrap &obj) : ClapTrap(obj)
-{
-	std::cout << "ScavTrap Copy constructor called" << std::endl;
+	std::cout << "ClapTrap Copy constructor called" << std::endl;
+	this->_name = obj._name;
 	this->_hp = obj._hp;
 	this->_ep = obj._ep;
 	this->_ad = obj._ad;
 }
-
-ScavTrap& ScavTrap::operator=(const ScavTrap &rhs)
+		
+ClapTrap::ClapTrap(std::string name)
 {
-	std::cout << "ScavTrap Assignment operator called" << std::endl;
-	ClapTrap::operator=(rhs);
-	return *this;
+	std::cout << "ClapTrap String constructor called" << std::endl;
+	_name = name;
+	_hp = 10;
+	_ep = 10;
+	_ad = 0;
 }
 
-void ScavTrap::attack(const std::string& target)
+void ClapTrap::attack(const std::string& target)
 {
 	if (_ep < 1 || _hp <  1)
 	{
 		std::cout << _name << "doesn't have enough energy points to attack..." << std::endl;
 		return ;
 	}
-	std::cout << "ScavTrap " << _name
+	std::cout << "ClapTrap " << _name
 		<< " attacks " << target
 		<< ", causing " << _ad
 		<< " points of damage!"
@@ -61,7 +56,7 @@ void ScavTrap::attack(const std::string& target)
 	_ep--;
 }
 
-void ScavTrap::takeDamage(unsigned int amount)
+void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (_hp <  1)
 	{
@@ -69,21 +64,21 @@ void ScavTrap::takeDamage(unsigned int amount)
 		std::cout << _name << "is already destroyed!" << std::endl;
 		return ;
 	}
-	std::cout << "ScavTrap " << _name
+	std::cout << "ClapTrap " << _name
 		<< " takes " << amount
 		<< " points of damage!"
 		<< std::endl;
 	_hp -= amount;
 }
 
-void ScavTrap::beRepaired(unsigned int amount)
+void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (_ep < 1 || _hp < 1)
 	{
 		std::cout << _name << "doesn't have enough energy points to repair..." << std::endl;
 		return ;
 	}
-	std::cout << "ScavTrap " << _name
+	std::cout << "ClapTrap " << _name
 		<< " repairs itself, regaining " << amount
 		<< " points of health!"
 		<< std::endl;
@@ -91,14 +86,16 @@ void ScavTrap::beRepaired(unsigned int amount)
 	_ep--;
 }
 
-void	ScavTrap::guardGate(void)
+ClapTrap& ClapTrap::operator=(const ClapTrap &rhs)
 {
-	std::cout << "ScavTrap "
-		<< _name << " enters gate guardian mode!"
-		<< std::endl;
+	this->_name = rhs._name;
+	this->_hp = rhs._hp;
+	this->_ep = rhs._ep;
+	this->_ad = rhs._ad;
+	return (*this);
 }
 
-ScavTrap::~ScavTrap()
+ClapTrap::~ClapTrap()
 {
-	std::cout << "ScavTrap Destructor called" << std::endl;
+	std::cout << "ClapTrap Destructor called" << std::endl;
 }

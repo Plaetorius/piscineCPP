@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/17 12:27:10 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 16:24:13 by tgernez          ###   ########.fr       */
+/*   Created: 2023/06/17 11:42:35 by tgernez           #+#    #+#             */
+/*   Updated: 2023/06/17 16:36:35 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include <iostream>
 #include <string>
 
-class ScavTrap : public ClapTrap
+int main() 
 {
-	public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		ScavTrap(const ScavTrap &obj);
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-		void guardGate(void);
-		ScavTrap& operator=(const ScavTrap &rhs);
-		~ScavTrap();
-};
+    FragTrap robot("Garf");
+
+    robot.attack("Enemy");
+    robot.takeDamage(10);
+    robot.beRepaired(5);
+    robot.highFivesGuys();
+
+    return 0;
+}
