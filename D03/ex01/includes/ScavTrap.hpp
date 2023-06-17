@@ -6,12 +6,14 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:27:10 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 16:24:13 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/17 17:23:38 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include <string>
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+# include "ClapTrap.hpp"
+# include <string>
 
 class ScavTrap : public ClapTrap
 {
@@ -26,3 +28,4 @@ class ScavTrap : public ClapTrap
 		ScavTrap& operator=(const ScavTrap &rhs);
 		~ScavTrap();
 };
+#endif

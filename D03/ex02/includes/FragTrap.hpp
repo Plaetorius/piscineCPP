@@ -6,12 +6,14 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:27:10 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 16:28:33 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/17 17:21:45 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include <string>
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+# include "ClapTrap.hpp"
+# include <string>
 
 class FragTrap : public ClapTrap
 {
@@ -26,3 +28,4 @@ class FragTrap : public ClapTrap
 		FragTrap& operator=(const FragTrap &rhs);
 		~FragTrap();
 };
+#endif

@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   Animals.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/17 11:42:39 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 17:22:30 by tgernez          ###   ########.fr       */
+/*   Created: 2023/06/17 17:04:55 by tgernez           #+#    #+#             */
+/*   Updated: 2023/06/17 17:23:27 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef ANIMALS_HPP
+# define ANIMALS_HPP
 # include <string>
 
-class ClapTrap
+class Animals
 {
 	protected:
-		std::string _name;
-		int			_hp;
-		int			_ep;
-		int			_ad;
+		std::string _type;
 	public:
-		ClapTrap();
-		ClapTrap(std::string name);
-		ClapTrap(const ClapTrap &obj);
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-		ClapTrap& operator=(const ClapTrap &rhs);
-		~ClapTrap();
+		Animals();
+		Animals(const Animals &obj);
+		virtual void makeSound() const = 0;	
+		Animals& operator=(const Animals &rhs);
+		~Animals();
 };
 #endif

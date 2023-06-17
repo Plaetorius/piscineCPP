@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/17 11:42:35 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 17:01:54 by tgernez          ###   ########.fr       */
+/*   Created: 2023/06/17 17:53:13 by tgernez           #+#    #+#             */
+/*   Updated: 2023/06/17 17:53:14 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
-#include <iostream>
-#include <string>
+#include "Cat.hpp"
 
-int main() 
+Cat::Cat()
 {
-    FragTrap robot("Garf");
+	std::cout << "Default Cat constructor called" << std::endl;
+}
 
-    robot.attack("Enemy");
-    robot.takeDamage(10);
-    robot.beRepaired(5);
-    robot.highFivesGuys();
-    return 0;
+Cat::Cat(const Cat &obj)
+{
+	std::cout << "Copy Cat constructor called" << std::endl;
+}
+
+Cat& Cat::operator=(const Cat &rhs)
+{
+	std::cout << "Cat Assignment operator called" << std::endl;
+}
+
+Cat::~Cat()
+{
+	std::cout << "Cat destructor called" << std::endl;
 }

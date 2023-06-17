@@ -6,11 +6,13 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 11:42:39 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 13:26:58 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/17 17:21:16 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
+# include <string>
 
 class ClapTrap
 {
@@ -29,3 +31,5 @@ class ClapTrap
 		ClapTrap& operator=(const ClapTrap &rhs);
 		~ClapTrap();
 };
+
+#endif
