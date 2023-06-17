@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 17:53:13 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 19:39:24 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/17 20:00:24 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,6 @@ Cat::Cat(const Cat &obj)
 void Cat::makeSound(void) const
 {
 	std::cout << "*meow meow*" << std::endl;
-}
-
-const std::string Cat::getType(void) const
-{
-	return Animal::getType();
 }
 
 Cat& Cat::operator=(const Cat &rhs)

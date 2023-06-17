@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 18:20:06 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 19:39:36 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/17 20:00:29 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,6 @@ Dog::Dog(const Dog &obj)
 void Dog::makeSound(void) const
 {
 	std::cout << "*woaf woaf*" << std::endl;
-}
-
-const std::string Dog::getType(void) const
-{
-	return Animal::getType();
 }
 
 Dog& Dog::operator=(const Dog &rhs)

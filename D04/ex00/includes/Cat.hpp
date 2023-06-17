@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 17:53:17 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 19:28:09 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/17 20:00:40 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class Cat : public Animal
 		Cat();
 		Cat(const Cat &obj);
 		Cat& operator=(const Cat &rhs);
-		const std::string getType(void) const;
 		void makeSound(void) const;
 		~Cat();
 };

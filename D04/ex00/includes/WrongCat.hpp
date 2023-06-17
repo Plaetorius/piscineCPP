@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 17:53:17 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 19:27:39 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/17 20:00:48 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class WrongCat : public WrongAnimal
 		WrongCat();
 		WrongCat(const WrongCat &obj);
 		WrongCat& operator=(const WrongCat &rhs);
-		const std::string getType(void) const;
 		void makeSound(void) const;
 		~WrongCat();
 };

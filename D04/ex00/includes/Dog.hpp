@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 18:20:02 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 19:28:01 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/17 20:00:45 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class Dog : public Animal
 		Dog();
 		Dog(const  Dog &obj);
 		Dog& operator=(const Dog &rhs);
-		const std::string getType(void) const;
 		void makeSound(void) const;
 		~Dog();
 };

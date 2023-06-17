@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 18:09:27 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 19:53:58 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/17 20:02:15 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main()
 	const WrongAnimal* wrong_cat = new WrongCat();
 
 	std::cout << wrong_cat->getType() << " " << std::endl;
-	wrong_cat->makeSound(); 
+	wrong_cat->makeSound();	//Va afficher "*wrong weird noises*"
 	wrong_meta->makeSound();
 	delete wrong_meta;
 	delete wrong_cat;

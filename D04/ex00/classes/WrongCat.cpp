@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 17:53:13 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 19:52:08 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/17 20:00:37 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,6 @@ WrongCat::WrongCat(const WrongCat &obj)
 void WrongCat::makeSound(void) const
 {
 	std::cout << "*wrong meow meow*" << std::endl;
-}
-
-const std::string WrongCat::getType(void) const
-{
-	return WrongAnimal::getType();
 }
 
 WrongCat& WrongCat::operator=(const WrongCat &rhs)
