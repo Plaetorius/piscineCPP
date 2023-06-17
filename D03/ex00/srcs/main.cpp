@@ -1,0 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/17 11:42:35 by tgernez           #+#    #+#             */
+/*   Updated: 2023/06/17 13:27:20 by tgernez          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ClapTrap.hpp"
+#include <iostream>
+#include <string>
+
+int main()
+{
+    ClapTrap ct1("Alice");
+    ClapTrap ct2("Bob");
+
+    ct1.attack("Bob");
+    ct2.takeDamage(3);
+    ct2.beRepaired(5);
+
+    ct2.attack("Alice");
+    ct1.takeDamage(3);
+    ct1.beRepaired(5);
+
+    return 0;
+}
