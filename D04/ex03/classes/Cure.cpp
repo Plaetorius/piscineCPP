@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:21:38 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/19 00:21:39 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/19 00:39:55 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,15 @@ Cure::~Cure()
 {
 	std::cout << "Cure destructor called" << std::endl;
 }
+
+Cure::AMateria(const std::string &type)
+{
+	std::cout << "String Cure constructor called" << std::endl;
+	this->_type = type;
+}
+
+void Cure::use(ICharacter &target)
+{
+	std::cout << "* heals " << target._name << "'s wounds *" << std::endl;
+}
+

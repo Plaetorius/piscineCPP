@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
+/*   IMateriaSource.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:21:42 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/19 00:21:43 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/19 00:47:25 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MateriaSource.hpp"
+#include "IMateriaSource.hpp"
 #include <iostream>
 
-MateriaSource::MateriaSource()
+IMateriaSource::MateriaSource()
 {
 	std::cout << "Default MateriaSource constructor called" << std::endl;
 }
 
-MateriaSource::MateriaSource(const MateriaSource &obj)
+IMateriaSource::MateriaSource(const MateriaSource &obj)
 {
 	std::cout << "Copy MateriaSource constructor called" << std::endl;
 }
 
-MateriaSource& MateriaSource::operator=(const MateriaSource &rhs)
+IMateriaSource& IMateriaSource::operator=(const IMateriaSource &rhs)
 {
 	std::cout << "MateriaSource Assignment operator called" << std::endl;
 }
 
-MateriaSource::~MateriaSource()
+IMateriaSource::~MateriaSource()
 {
 	std::cout << "MateriaSource destructor called" << std::endl;
 }
