@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 17:53:13 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 20:03:11 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/20 18:41:27 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ void Cat::makeSound(void) const
 
 Cat& Cat::operator=(const Cat &rhs)
 {
-	std::cout << "Cat Assignment operator called" << std::endl;
+	std::cout << "Cat Assignment Operator called" << std::endl;
+	if (this == &rhs)
+		return (*this);
 	Animal::operator=(rhs);
 	return *this;
 }

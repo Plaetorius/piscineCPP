@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 11:42:42 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 17:47:11 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/20 18:42:32 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,9 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &rhs)
 {
-	std::cout << "ClapTrap Assignment operator called" << std::endl;
+	std::cout << "ClapTrap Assignment Operator called" << std::endl;
+	if (this == &rhs)
+		return (*this);
 	this->_name = rhs._name;
 	this->_hp = rhs._hp;
 	this->_ep = rhs._ep;

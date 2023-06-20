@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 11:42:42 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 19:20:52 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/20 18:42:21 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,9 @@ ScavTrap::ScavTrap(const ScavTrap &obj) : ClapTrap(obj)
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &rhs)
 {
-	std::cout << "ScavTrap Assignment operator called" << std::endl;
+	std::cout << "ScavTrap Assignment Operator called" << std::endl;
+	if (this == &rhs)
+		return (*this);
 	ClapTrap::operator=(rhs);
 	return *this;
 }

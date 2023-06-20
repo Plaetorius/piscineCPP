@@ -42,7 +42,9 @@ FragTrap::FragTrap(const FragTrap &obj) : ClapTrap(obj)
 
 FragTrap& FragTrap::operator=(const FragTrap &rhs)
 {
-	std::cout << "FragTrap Assignment operator called" << std::endl;
+	std::cout << "FragTrap Assignment Operator called" << std::endl;
+	if (this == &rhs)
+		return (*this);
 	ClapTrap::operator=(rhs);
 	return *this;
 }

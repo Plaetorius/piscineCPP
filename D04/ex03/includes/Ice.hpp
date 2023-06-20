@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:21:49 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/19 00:46:13 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/20 17:11:37 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 class Ice : public AMateria
 {
 	private:
-
+		AMateria* _ptr;
 	public:
 		Ice();
 		Ice(const  Ice &obj);

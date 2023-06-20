@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 21:59:50 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 22:16:00 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/20 18:40:13 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ Brain::Brain(const Brain &obj)
 
 Brain& Brain::operator=(const Brain &rhs)
 {
-	std::cout << "Brain Assignment operator called" << std::endl;
+	std::cout << "Brain Assignment Operator called" << std::endl;
+	if (this == &rhs)
+		return (*this);
 	for (int i = 0; i < 100; ++i)
 		this->_ideas[i] = rhs._ideas[i];
 	return *this;

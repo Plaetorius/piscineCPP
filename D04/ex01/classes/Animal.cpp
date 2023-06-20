@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 17:08:25 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 19:43:56 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/20 18:40:30 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ const std::string Animal::getType(void) const
 Animal& Animal::operator=(const Animal &rhs)
 {
 	std::cout << "Assignation Animal Operator called" << std::endl;
+	if (this == &rhs)
+		return (*this);
 	this->_type = rhs._type;
 	return *this;
 }

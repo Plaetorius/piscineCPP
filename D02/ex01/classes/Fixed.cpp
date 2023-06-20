@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 17:47:24 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/16 23:25:14 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/20 18:43:51 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,12 @@ std::ostream&	operator<<(std::ostream &os, const Fixed &obj)
 	return os;			
 }
 
-Fixed& Fixed::operator=(const Fixed &obj)
+Fixed& Fixed::operator=(const Fixed &rhs)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
-	this->_fixed_value = obj.getRawBits();
+	std::cout << "Copy assignment Operator called" << std::endl;
+	if (this == &rhs)
+		return (*this);
+	this->_fixed_value = rhs.getRawBits();
 	return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 17:53:13 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 20:00:37 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/20 18:41:48 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ void WrongCat::makeSound(void) const
 
 WrongCat& WrongCat::operator=(const WrongCat &rhs)
 {
-	std::cout << "WrongCat Assignment operator called" << std::endl;
+	std::cout << "WrongCat Assignment Operator called" << std::endl;
+	if (this == &rhs)
+		return (*this);
 	WrongAnimal::operator=(rhs);
 	return *this;
 }

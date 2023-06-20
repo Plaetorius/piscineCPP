@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:21:33 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/19 00:38:57 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/20 18:38:41 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,16 @@ AMateria::AMateria()
 AMateria::AMateria(const AMateria &obj)
 {
 	std::cout << "Copy AMateria constructor called" << std::endl;
+	this->_type = obj._type;
 }
 
 AMateria& AMateria::operator=(const AMateria &rhs)
 {
-	std::cout << "AMateria Assignment operator called" << std::endl;
+	std::cout << "AMateria Assignment Operator called" << std::endl;
+	if (this == &rhs)
+		return (*this);
+	this->_type = rhs._type;
+	return (*this);
 }
 
 AMateria::~AMateria()
@@ -48,4 +53,5 @@ const std::string &AMateria::getType() const
 void AMateria::use(ICharacter &target)
 {
 	std::cout << "this shouldn't be displayed" << std::endl;
+	(void)target;
 }

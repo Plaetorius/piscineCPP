@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 18:20:06 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 22:12:53 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/20 18:41:09 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,12 @@ void Dog::makeSound(void) const
 
 Dog& Dog::operator=(const Dog &rhs)
 {
-	std::cout << "Dog Assignment operator called" << std::endl;
-	if (this != &rhs)
-	{
-		Animal::operator=(rhs);
-		delete _brain;
-		_brain = new Brain(*rhs._brain);
-	}
+	std::cout << "Dog Assignment Operator called" << std::endl;
+	if (this == &rhs)
+		return (*this);
+	Animal::operator=(rhs);
+	delete _brain;
+	_brain = new Brain(*rhs._brain);
 	return *this;
 }
 

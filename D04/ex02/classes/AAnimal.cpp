@@ -33,6 +33,8 @@ const std::string AAnimal::getType(void) const
 AAnimal& AAnimal::operator=(const AAnimal &rhs)
 {
 	std::cout << "Assignation AAnimal Operator called" << std::endl;
+	if (this == &rhs)
+		return (*this);
 	this->_type = rhs._type;
 	return *this;
 }

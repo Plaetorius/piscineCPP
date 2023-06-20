@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/19 00:13:06 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/20 17:04:33 by tgernez          ###   ########.fr       */
+/*   Created: 2023/06/20 18:10:22 by tgernez           #+#    #+#             */
+/*   Updated: 2023/06/20 18:19:54 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IAMATERIA_H
-# define IAMATERIA_H
+#ifndef CHARACTER_H
+# define CHARACTER_H
 
 # pragma once
-# include <string>
+# include "AMateria.hpp"
 # include "ICharacter.hpp"
+# include <string>
 
-class AMateria
+class Character : public ICharacter
 {
-	protected:
-		std::string	_type;
+	private:
+		std::string _name;
+		AMateria* _inventory[4];
+		int	items;
 	public:
-		AMateria();
-		AMateria(const  AMateria &obj);
-		AMateria& operator=(const AMateria &rhs);
-		virtual ~AMateria();
-		AMateria(const std::string &type);
-		const std::string &getType() const;
-		virtual	AMateria* clone() = 0;
-		virtual	void use(ICharacter &target);
+		Character();
+		Character(const  Character &obj);
+		Character& operator=(const Character &rhs);
+		~Character();
+		const std::string &getName() const;
+		void equip(AMateria* m);
+		void unequip(int idx) ;
+		void use(int idx, ICharacter& target);
 };
 
 #endif

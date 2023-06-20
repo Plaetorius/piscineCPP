@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:21:42 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/19 00:47:25 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/20 18:39:24 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ IMateriaSource::MateriaSource(const MateriaSource &obj)
 
 IMateriaSource& IMateriaSource::operator=(const IMateriaSource &rhs)
 {
-	std::cout << "MateriaSource Assignment operator called" << std::endl;
+	std::cout << "MateriaSource Assignment Operator called" << std::endl;
+	if (this == &rhs)
+		return (*this);
 }
 
 IMateriaSource::~MateriaSource()
