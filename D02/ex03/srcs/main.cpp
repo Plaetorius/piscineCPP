@@ -6,23 +6,19 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 17:47:41 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/23 11:56:54 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/23 11:32:15 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
 #include <string>
+#include <cmath>
 
-int main(void)
+
+int main( void )
 {
-	Fixed a;
-	Fixed b(a);
-	Fixed c;
 
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+
 	return 0;
 }
