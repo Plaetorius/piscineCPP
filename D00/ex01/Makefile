@@ -6,13 +6,13 @@
 #    By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 12:29:58 by tgernez           #+#    #+#              #
-#    Updated: 2023/06/14 16:18:14 by tgernez          ###   ########.fr        #
+#    Updated: 2023/06/23 16:18:25 by tgernez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= phone_book
 CC		= c++
-FLAGS	= -Wall -Wextra -Werror
+FLAGS	= -Wall -Wextra -Werror ${C98}
 C98		= -std=c++98
 INCL	= -I includes
 SRCS	=	$(addsuffix .cpp,		\
@@ -46,6 +46,11 @@ all: ${NAME}
 clean:
 	@echo "${CYAN}Cleaned ${NAME}${NC}"
 	@${RM} ${OBJS}
+
+test: all
+	@echo "No automated tests for this one, you have to do it yourself!"
+	valgrind ./${NAME}
+	make fclean
 
 fclean:
 	@echo "${CYAN}FCleaned ${NAME}${NC}"

@@ -6,13 +6,13 @@
 #    By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 12:29:58 by tgernez           #+#    #+#              #
-#    Updated: 2023/06/17 16:37:00 by tgernez          ###   ########.fr        #
+#    Updated: 2023/06/23 15:14:20 by tgernez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= fragtrap
 CC		= c++
-FLAGS	= -Wall -Wextra -Werror
+FLAGS	= -Wall -Wextra -Werror ${C98}
 C98		= -std=c++98
 INCL	= -I includes
 SRCS	=	$(addsuffix .cpp,		\

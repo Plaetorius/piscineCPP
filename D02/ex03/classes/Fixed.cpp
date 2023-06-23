@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 17:47:24 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/23 11:32:01 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/23 14:42:58 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,24 @@
 
 Fixed::Fixed() : _fixed_value(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &obj)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
 	_fixed_value = obj.getRawBits();
 }
 
 Fixed::Fixed(const int value)
 {
-	std::cout << "Int constructor called" << std::endl;
+	// std::cout << "Int constructor called" << std::endl;
 	_fixed_value = value << _fixed_length;
 }
 
 Fixed::Fixed(const float value)
 {
-	std::cout << "Float constructor called" << std::endl;
+	// std::cout << "Float constructor called" << std::endl;
 	_fixed_value = roundf(value * (1 <<  _fixed_length));
 }
 
@@ -50,7 +50,7 @@ int		Fixed::toInt(void) const
 
 int		Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	// std::cout << "getRawBits member function called" << std::endl;
 	return this->_fixed_value;
 }
 
@@ -62,7 +62,7 @@ std::ostream&	operator<<(std::ostream &os, const Fixed &obj)
 
 Fixed& Fixed::operator=(const Fixed &rhs)
 {
-	std::cout << "Copy assignment Operator called" << std::endl;
+	// std::cout << "Copy assignment Operator called" << std::endl;
 	if (this == &rhs)
 		return (*this);
 	this->_fixed_value = rhs.getRawBits();
@@ -71,7 +71,7 @@ Fixed& Fixed::operator=(const Fixed &rhs)
 
 void	Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called" << std::endl;
+	// std::cout << "setRawBits member function called" << std::endl;
 	this->_fixed_value = raw;
 }
 
@@ -183,6 +183,6 @@ const Fixed& Fixed::max(const Fixed &lhs, const Fixed &rhs)
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 }
 

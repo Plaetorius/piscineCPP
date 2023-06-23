@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 12:29:55 by tgernez           #+#    #+#             */
-/*   Updated: 2023/05/18 16:51:57 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/23 15:30:21 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,9 @@ void	create_contact(PhoneBook *phone_book)
 
 int main()
 {
-	PhoneBook phone_book;
-	std::string entry = "";
+	PhoneBook	phone_book;
+	std::string	entry = "";
+	long		contact_number = 0;
 
 	std::cout << "Welcome to your PhoneBook!" << std::endl;
 	while (true)
@@ -100,7 +101,10 @@ int main()
 			std::cout << "Please enter the index of the contact you want to see" << std::endl;
 			if (!safe_getline(&entry))
 				break ;
-            phone_book.display_single_contact(std::stoi(entry));
+			contact_number = std::atol(entry);
+			if (contact_number)
+				
+            phone_book.display_single_contact(std::atol(entry));
         }
         else if (entry == "EXIT")
         {

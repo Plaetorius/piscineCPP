@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 18:11:18 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/20 18:38:57 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/23 21:51:54 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Character::Character()
 	std::cout << "Default Character constructor called" << std::endl;
 	this->_name = "default";
 	for (int i = 0; i < 4; i++)
-		this->_inventory[i] = nullptr;
+		this->_inventory[i] = NULL;
 	this->items = 0;
 }
 

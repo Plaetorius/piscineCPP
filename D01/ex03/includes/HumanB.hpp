@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:35:51 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/16 20:10:15 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/23 22:28:11 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 # include <string>
 # include "Weapon.hpp"
 
+
+/*
+	HumanB's Weapon is a pointer as it is stated in the rules of the exercice
+	that HumanB can be unarmed (points to NULL)
+*/
 class HumanB
 {
 	private:

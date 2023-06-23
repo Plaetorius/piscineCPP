@@ -6,13 +6,13 @@
 #    By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 12:29:58 by tgernez           #+#    #+#              #
-#    Updated: 2023/05/18 17:11:12 by tgernez          ###   ########.fr        #
+#    Updated: 2023/06/23 16:18:39 by tgernez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= bank
 CC		= c++
-FLAGS	= -Wall -Wextra -Werror
+FLAGS	= -Wall -Wextra -Werror ${C98}
 C98		= -std=c++98
 INCL	= -I .
 SRCS	=	$(addsuffix .cpp,		\
@@ -38,6 +38,11 @@ ${NAME}: ${OBJS}
 	@echo "${LGREEN}Successfully created${NC}${CYAN} ${NAME}${NC}${LGREEN}!${NC}"
 
 all: ${NAME}
+
+test: all
+	@echo "No automated tests for this one, you have to do it yourself!"
+	valgrind ./${NAME}
+	make fclean
 
 clean:
 	@echo "${CYAN}Cleaned ${NAME}${NC}"

@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 13:31:05 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/13 21:32:13 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/23 21:55:42 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 
 Zombie* zombieHorde(int N, std::string name);
 
+
+/*
+	In this module, we use OPERARTOR new[] and OPERATOR delete[] because it
+	allows us to allocate raw memory (without calling the constructors of the
+	objects)
+*/
 int main()
 {
 	int				N = 5;
@@ -22,13 +28,17 @@ int main()
 	
 	if (!horde)
 	{
-		std::cout << "Horde is nullptr" << std::endl;
+		std::cout << "Horde is NULL" << std::endl;
 		return (1);
 	}
 	for (int i = 0; i < N; ++i)
 	{
 		horde[i].announce();
 	}
-	delete[] horde;
+	for (int i = 0; i < N; ++i)
+	{
+		horde[i].~Zombie();
+	}
+	operator delete[](horde);
 	return (0);
 }

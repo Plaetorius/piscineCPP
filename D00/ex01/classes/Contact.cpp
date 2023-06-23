@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:18:34 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/16 20:03:53 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/23 15:28:02 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 Contact::Contact(void)
 {
-	_first_name = "";
-	_last_name = "";
-	_nickname = "";
-	_phone_number = "";
-	_darkest_secret = "";
+	this->_first_name = "";
+	this->_last_name = "";
+	this->_nickname = "";
+	this->_phone_number = "";
+	this->_darkest_secret = "";
 }
 
 Contact::Contact(std::string first_name,

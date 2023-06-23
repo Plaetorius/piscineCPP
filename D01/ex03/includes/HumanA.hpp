@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:35:51 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/16 20:10:09 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/23 22:27:44 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 # include <string>
 # include "Weapon.hpp"
 
+
+/*
+	HumanA's Weapon is a reference as the rules state that: "HumanA must alwaysbe armed"
+	or something along the line of that ; a reference can't be NULL
+*/
 class HumanA
 {
 	private:

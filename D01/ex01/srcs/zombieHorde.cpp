@@ -6,11 +6,14 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:39:08 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/13 21:20:30 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/23 21:51:54 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+/*
+CALLS DESTRUCTOR TWICE PER ZOMBIE
 
 Zombie* zombieHorde(int N, std::string name)
 {
@@ -19,7 +22,7 @@ Zombie* zombieHorde(int N, std::string name)
 	if (!horde)
 	{
 		std::cout << "Failed allocation" << std::endl;
-		return (nullptr);
+		return (NULL);
 	}
 	for (int i = 0; i < N; ++i)
 	{
@@ -27,3 +30,21 @@ Zombie* zombieHorde(int N, std::string name)
 	}
 	return (horde);	
 }
+*/
+
+Zombie* zombieHorde(int N, std::string name)
+{
+	Zombie* horde = static_cast<Zombie*>(operator new[](N * sizeof(Zombie)));
+
+	if (!horde)
+	{
+		std::cout << "Failed allocation" << std::endl;
+		return (NULL);
+	}
+	for (int i = 0; i < N; ++i)
+	{
+		new(&horde[i]) Zombie(name);
+	}
+	return (horde);	
+}
+

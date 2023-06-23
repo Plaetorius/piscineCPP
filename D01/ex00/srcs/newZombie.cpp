@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:39:08 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/13 21:09:28 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/23 21:51:54 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Zombie* newZombie(std::string name)
 	if (!zombie)
 	{
 		std::cout << "Failed allocation" << std::endl;
-		return (nullptr);
+		return (NULL);
 	}
 	return (zombie);	
 }

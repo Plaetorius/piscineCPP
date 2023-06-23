@@ -6,12 +6,12 @@
 #    By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/11 12:08:13 by tgernez           #+#    #+#              #
-#    Updated: 2023/06/11 12:08:14 by tgernez          ###   ########.fr        #
+#    Updated: 2023/06/23 16:17:04 by tgernez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= c++
-FLAGS	= -Wall -Wextra -Werror
+FLAGS	= -Wall -Wextra -Werror ${C98}
 C98		= -std=c++98
 SRCS	= 	$(addsuffix .cpp,	\
 			megaphone			\
@@ -37,11 +37,12 @@ fclean:
 
 test: all
 	@echo "${CYAN}First Test ${NC}${LGREEN}(1 parameter) ${NC}"
-	./${NAME} "shhhhh... I think the students are asleep..."
+	valgrind ./${NAME} "shhhhh... I think the students are asleep..."
 	@echo "${CYAN}Second Test ${NC}${LGREEN}(multiple parameters)${NC}"
-	./${NAME} Damnit " ! " "Sorry students, I thought this thing was off."
+	valgrind ./${NAME} Damnit " ! " "Sorry students, I thought this thing was off."
 	@echo "${CYAN}Third Test ${NC}${LGREEN}(empty)${NC}"
-	./${NAME}
+	valgrind ./${NAME}
+	make fclean
 
 re: clean all
 

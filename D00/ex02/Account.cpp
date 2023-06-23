@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 12:57:13 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/11 13:05:50 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/23 21:51:54 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ void Account::displayStatus() const
 
 void Account::_displayTimestamp()
 {
-    std::time_t currentTime = std::time(nullptr); //Secondes depuis époque Unix
+    std::time_t currentTime = std::time(NULL); //Secondes depuis époque Unix
     std::tm* localTime = std::localtime(&currentTime); //Transforme secondes en une structure qui contient la date, heure, jour etc. actuels
 
     std::cout << "["

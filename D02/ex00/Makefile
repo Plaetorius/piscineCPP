@@ -6,13 +6,13 @@
 #    By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 12:29:58 by tgernez           #+#    #+#              #
-#    Updated: 2023/06/16 11:44:43 by tgernez          ###   ########.fr        #
+#    Updated: 2023/06/23 15:14:20 by tgernez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= fixed
 CC		= c++
-FLAGS	= -Wall -Wextra -Werror
+FLAGS	= -Wall -Wextra -Werror ${C98}
 C98		= -std=c++98
 INCL	= -I includes
 SRCS	=	$(addsuffix .cpp,		\
@@ -34,7 +34,7 @@ CYAN	= \033[1;36m
 	@echo "\033[1A                                                          "
 	@echo -n "\033[1A"
 	@echo "${CYAN}Compiling $< ${NC}"
-	@${CC} ${FLAGS} -o $@ -c $^ ${INCL}
+	@${CC} ${FLAGS} ${C98} -o $@ -c $^ ${INCL}
 
 ${NAME}: ${OBJS}
 	@${CC} ${FLAGS} ${OBJS} ${INCL} -o $@ 

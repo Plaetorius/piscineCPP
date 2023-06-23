@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:39:11 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/16 20:11:07 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/23 21:51:54 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 HumanB::HumanB(std::string name) : _name(name)
 {
-	_weapon = nullptr;
+	_weapon = NULL;
 }
 
 void	HumanB::attack(void)

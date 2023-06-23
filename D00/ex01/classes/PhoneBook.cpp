@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 12:33:18 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/16 20:08:42 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/23 15:26:42 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,21 @@ void	PhoneBook::add_contact(std::string first_name, std::string last_name,
 	if (_nb_contacts < 8)
 	{
 		_contacts[_nb_contacts] =
-			Contact(std::move(first_name),
-					std::move(last_name),
-					std::move(nickname),
-					std::move(phone_number),
-					std::move(darkest_secret));
+			Contact((first_name),
+					(last_name),
+					(nickname),
+					(phone_number),
+					(darkest_secret));
 		_nb_contacts++;
 	}
 	else
 	{
 		_contacts[_oldest] =
-			Contact(std::move(first_name),
-					std::move(last_name),
-					std::move(nickname),
-					std::move(phone_number),
-					std::move(darkest_secret));
+			Contact((first_name),
+					(last_name),
+					(nickname),
+					(phone_number),
+					(darkest_secret));
 		if (_oldest == 7)
 			_oldest = 0;
 		else
