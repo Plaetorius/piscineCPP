@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 15:48:40 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/15 17:33:40 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/23 11:03:58 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,13 @@ void	replace_string(std::string& file_content, const std::string& old_word, cons
 	size_t		old_word_len = old_word.length();
 
 	new_str.reserve(file_content.length());
-	pos = 0;
-	while ((pos = file_content.find(old_word, pos)) != std::string::npos)
+	pos = file_content.find(old_word, 0);
+	while (pos != std::string::npos)
 	{
 		new_str += file_content.substr(0, pos);
 		new_str += new_word;
 		file_content.erase(0, pos + old_word_len);
+		pos = file_content.find(old_word, 0);
 	}
 	new_str += file_content;
 	file_content.swap(new_str);
@@ -90,6 +91,7 @@ int main(int ac, char *av[])
 	if (file_content.empty())
 		return (1);
 	replace_string(file_content, av[2], av[3]);
+	std::cout << file_content << std::endl;
 	write_to_file(av[1], file_content);	
 	return (0);
 }
