@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 17:47:38 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/16 20:13:30 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/24 21:54:29 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ class Fixed
 {
 	private:
 		int _fixed_value;
-		static const int _fixed_length = 8;
+		static const int _fixed_length = 8; //Static -> communes a toutes les instances (si pas const, modif ==> modifierait pour toutes les instances)
 	public:
 		Fixed();
 		Fixed(const Fixed &obj);

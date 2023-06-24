@@ -53,7 +53,7 @@ void FragTrap::attack(const std::string& target)
 {
 	if (_ep < 1 || _hp <  1)
 	{
-		std::cout << _name << "doesn't have enough energy points to attack..." << std::endl;
+		std::cout << _name << " doesn't have enough energy or health points to attack..." << std::endl;
 		return ;
 	}
 	std::cout << "FragTrap " << _name
@@ -69,7 +69,7 @@ void FragTrap::takeDamage(unsigned int amount)
 	if (_hp <  1)
 	{
 		_hp = 0;
-		std::cout << _name << "is already destroyed!" << std::endl;
+		std::cout << _name << " is already destroyed!" << std::endl;
 		return ;
 	}
 	std::cout << "FragTrap " << _name
@@ -83,7 +83,7 @@ void FragTrap::beRepaired(unsigned int amount)
 {
 	if (_ep < 1 || _hp < 1)
 	{
-		std::cout << _name << "doesn't have enough energy points to repair..." << std::endl;
+		std::cout << _name << " doesn't have enough energy or health points to repair itself..." << std::endl;
 		return ;
 	}
 	std::cout << "FragTrap " << _name
@@ -106,22 +106,7 @@ FragTrap::~FragTrap()
 	std::cout << "FragTrap Destructor called" << std::endl;
 }
 
-std::string FragTrap::getName(void)
-{
-	return (this->_name);
-}
-
-int	FragTrap::getHp(void)
-{
-	return this->_hp;
-}
-
-int	FragTrap::getEp(void)
-{
-	return this->_ep;
-}
-
-int	FragTrap::getAd(void)
-{
-	return this->_ad;
+int	FragTrap::giveAd(void)
+{ 
+	return (30);
 }

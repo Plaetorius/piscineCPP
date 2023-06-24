@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 11:42:35 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 13:27:20 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/24 22:06:50 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ int main()
     ct2.attack("Alice");
     ct1.takeDamage(3);
     ct1.beRepaired(5);
+	ct1.takeDamage(100);
+	ct1.takeDamage(1);
+	ct1.beRepaired(10);
 
     return 0;
 }

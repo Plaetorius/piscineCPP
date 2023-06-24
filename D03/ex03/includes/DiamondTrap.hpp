@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 11:18:27 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/24 17:02:52 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/24 21:47:32 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ class DiamondTrap : public FragTrap, public ScavTrap
 		void	whoAmI(void);
 		void 	attack(std::string& target);
 		void	getStats(void); //For debug
+		void attack(const std::string& target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
 
 };
 

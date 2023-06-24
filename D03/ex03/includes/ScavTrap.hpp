@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:27:10 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/24 19:04:04 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/24 21:14:51 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,5 @@ class ScavTrap : virtual public ClapTrap
 		void guardGate(void);
 		ScavTrap& operator=(const ScavTrap &rhs);
 		~ScavTrap();
-		std::string getName(void);
-		int	getHp(void);
-		int	getEp(void);
-		int	getAd(void);
 };
 #endif

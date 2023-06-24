@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 17:47:38 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/16 23:57:10 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/24 21:55:17 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ class Fixed
 		Fixed&	operator--();
 		Fixed	operator--(int);
 
-		static			Fixed& min(Fixed &lhs, Fixed &rhs);
+		static			Fixed& min(Fixed &lhs, Fixed &rhs); //static ==> permet appel sans instanciation (Fixed::max au lieu de Fixed f; f.max(f1, f2);)
 		static const	Fixed& min(const Fixed &lhs, const Fixed &rhs);
 		static			Fixed& max(Fixed &lhs, Fixed &rhs);
 		static const	Fixed& max(const Fixed &lhs, const Fixed &rhs);

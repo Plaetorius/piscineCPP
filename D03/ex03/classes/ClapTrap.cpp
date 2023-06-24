@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 11:42:42 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/20 18:42:04 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/24 22:04:21 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void ClapTrap::attack(const std::string& target)
 {
 	if (_ep < 1 || _hp <  1)
 	{
-		std::cout << _name << "doesn't have enough energy points to attack..." << std::endl;
+		std::cout << _name << " doesn't have enough energy or health points to attack..." << std::endl;
 		return ;
 	}
 	std::cout << "ClapTrap " << _name
@@ -61,7 +61,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	if (_hp <  1)
 	{
 		_hp = 0;
-		std::cout << _name << "is already destroyed!" << std::endl;
+		std::cout << _name << " is already destroyed!" << std::endl;
 		return ;
 	}
 	std::cout << "ClapTrap " << _name
@@ -75,7 +75,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (_ep < 1 || _hp < 1)
 	{
-		std::cout << _name << "doesn't have enough energy points to repair..." << std::endl;
+		std::cout << _name << " doesn't have enough energy or health points to repair itself..." << std::endl;
 		return ;
 	}
 	std::cout << "ClapTrap " << _name
