@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 11:42:42 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/20 18:42:21 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/24 19:04:00 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,4 +104,24 @@ void	ScavTrap::guardGate(void)
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap Destructor called" << std::endl;
+}
+
+std::string ScavTrap::getName(void)
+{
+	return (this->_name);
+}
+
+int	ScavTrap::getHp(void)
+{
+	return this->_hp;
+}
+
+int	ScavTrap::getEp(void)
+{
+	return this->_ep;
+}
+
+int	ScavTrap::getAd(void)
+{
+	return this->_ad;
 }

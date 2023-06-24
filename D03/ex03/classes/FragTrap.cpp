@@ -110,3 +110,18 @@ std::string FragTrap::getName(void)
 {
 	return (this->_name);
 }
+
+int	FragTrap::getHp(void)
+{
+	return this->_hp;
+}
+
+int	FragTrap::getEp(void)
+{
+	return this->_ep;
+}
+
+int	FragTrap::getAd(void)
+{
+	return this->_ad;
+}

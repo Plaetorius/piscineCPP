@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 11:18:31 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/24 17:13:03 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/24 19:13:17 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 #include <iostream>
 #include <string>
 
-DiamondTrap::DiamondTrap() : ClapTrap("Default_clap_name"), FragTrap(), ScavTrap()
+DiamondTrap::DiamondTrap() : ClapTrap("Default_clap_name"), FragTrap("Default")
 {
 	std::cout << "Default DiamondTrap constructor called" << std::endl;
 	this->_name = "Default";
 	this->_hp = FragTrap::_hp;
-	this->_ep = ScavTrap::_ep;
-	this->_ad = ScavTrap::_ad;
+	// this->_ep = ScavTrap::_ep;
+	this->_ad = FragTrap::_ad;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &obj)
@@ -53,13 +53,13 @@ DiamondTrap::~DiamondTrap()
 	std::cout << "DiamondTrap destructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name) 
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(name) 
 {
 	std::cout << "String DiamondTrap constructor called" << std::endl;
 	this->_name = name;
-	_hp = FragTrap::_hp;  
-    _ep = ScavTrap::_ep;  
-    _ad = FragTrap::_ad;  
+	this->_hp = FragTrap::_hp;
+	// this->_ep = ScavTrap::_ep;
+	this->_ad = FragTrap::_ad;	
 }
 
 void DiamondTrap::whoAmI(void)
@@ -78,6 +78,6 @@ void DiamondTrap::getStats(void)
 	std::cout << "======Stats=====" << std::endl;
 	std::cout << "Name: " << this->_name << std::endl;
 	std::cout << "HP: " << this->_hp << std::endl;
-	std::cout << "ED: " << this->_ep << std::endl;
+	std::cout << "EP: " << this->_ep << std::endl;
 	std::cout << "AD: " << this->_ad << std::endl;
 }

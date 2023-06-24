@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:27:10 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/24 12:13:51 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/24 19:08:23 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,8 @@ class FragTrap :  virtual public ClapTrap
 		FragTrap& operator=(const FragTrap &rhs);
 		~FragTrap();
 		std::string getName(void);
+		int	getHp(void);
+		int	getEp(void);
+		int	getAd(void);
 };
 #endif
