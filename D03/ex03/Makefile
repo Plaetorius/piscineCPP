@@ -6,11 +6,11 @@
 #    By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 12:29:58 by tgernez           #+#    #+#              #
-#    Updated: 2023/06/24 11:14:07 by tgernez          ###   ########.fr        #
+#    Updated: 2023/06/24 12:06:55 by tgernez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= scavtrap
+NAME	= diamondtrap
 CC		= c++
 FLAGS	= -Wall -Wextra -Werror ${C98}
 C98		= -std=c++98
@@ -23,6 +23,8 @@ CLAS	= 	$(addsuffix .cpp,		\
 			$(addprefix classes/,	\
 				ClapTrap			\
 				ScavTrap			\
+				FragTrap			\
+				DiamondTrap			\
 			))
 OBJS	= ${SRCS:.cpp=.o} ${CLAS:.cpp=.o}
 RM		= rm -rf
