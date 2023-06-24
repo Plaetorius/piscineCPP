@@ -6,16 +6,20 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:39:11 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/16 20:09:32 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/24 16:20:19 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(void) {}
+Zombie::Zombie(void)
+{
+	std::cout << "Default constructor has been created." << std::endl;	
+}
 
 Zombie::Zombie(std::string desired_name)
 {
+	std::cout << desired_name << " - String constructor called" << std::endl;
 	_name = desired_name;
 }
 
@@ -26,5 +30,5 @@ void Zombie::announce(void)
 
 Zombie::~Zombie(void)
 {
-	std::cout << _name << " has been destroyed." << std::endl;
+	std::cout << _name << " - Destructor called" << std::endl;
 }

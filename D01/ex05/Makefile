@@ -6,7 +6,7 @@
 #    By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 12:29:58 by tgernez           #+#    #+#              #
-#    Updated: 2023/06/23 15:14:20 by tgernez          ###   ########.fr        #
+#    Updated: 2023/06/24 16:22:15 by tgernez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,11 @@ ${NAME}: ${OBJS}
 	@echo "${LGREEN}Successfully created${NC}${CYAN} ${NAME}${NC}${LGREEN}!${NC}"
 
 all: ${NAME}
+
+test: all
+	@echo "No automated tests for this one!"
+	valgrind ./${NAME}
+	make fclean
 
 clean:
 	@echo "${CYAN}Cleaned ${NAME}${NC}"
