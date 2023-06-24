@@ -6,12 +6,13 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 17:47:24 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/20 18:43:51 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/24 11:02:55 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
+#include <cmath>
 
 Fixed::Fixed() : _fixed_value(0)
 {

@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 11:31:15 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/23 14:54:35 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/24 10:58:47 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,10 @@ Point::Point(const float x, const float y) : _x(x), _y(y)
 
 float	Point::getXf(void) const
 {
-	std::cout << "X: " << this->_x.toFloat() << std::endl;
 	return (this->_x.toFloat());
 }
 
 float	Point::getYf(void) const
 {
-	std::cout << "Y: " << this->_y.toFloat() << std::endl;
 	return (this->_y.toFloat());
 }

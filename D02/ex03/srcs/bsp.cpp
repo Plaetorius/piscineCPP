@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 13:48:53 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/23 22:53:28 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/24 11:11:37 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 static float	sign(Point const p1, Point const p2, Point const p3)
 {
-	return ((p1.getXf() - p3.getXf()) * (p2.getYf() - p3.getYf()) - (p2.getXf() - p3.getXf() * p1.getYf() - p3.getYf())); 
+	return (p1.getXf() - p3.getXf()) * (p2.getYf() - p3.getYf()) - (p2.getXf() - p3.getXf()) * (p1.getYf() - p3.getYf());
 }
 
 bool bsp(Point const a, Point const b, Point const c, Point const point)
