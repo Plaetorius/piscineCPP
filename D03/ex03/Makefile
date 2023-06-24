@@ -6,13 +6,13 @@
 #    By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 12:29:58 by tgernez           #+#    #+#              #
-#    Updated: 2023/06/24 12:06:55 by tgernez          ###   ########.fr        #
+#    Updated: 2023/06/24 16:56:56 by tgernez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= diamondtrap
 CC		= c++
-FLAGS	= -Wall -Wextra -Werror ${C98}
+FLAGS	= -Wall -Wextra -Werror ${C98} -Wshadow
 C98		= -std=c++98
 INCL	= -I includes
 SRCS	=	$(addsuffix .cpp,		\
