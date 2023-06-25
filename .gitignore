@@ -54,3 +54,5 @@ Mkfile.old
 dkms.conf
 script.sh
 *.log
+gfc.sh
+my_code
