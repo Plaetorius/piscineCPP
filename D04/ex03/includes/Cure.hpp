@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:21:47 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/25 16:58:37 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/25 19:37:37 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,13 @@
 
 class Cure : public AMateria
 {
-	private:
-
 	public:
 		Cure();
 		Cure(const  Cure &obj);
 		Cure& operator=(const Cure &rhs);
 		~Cure();
 		Cure(const std::string &type);
-		Cure* clone();
+		Cure* clone() const;
 		void use(ICharacter &target);
 };
 

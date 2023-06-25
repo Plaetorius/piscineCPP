@@ -6,7 +6,7 @@
 #    By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 12:29:58 by tgernez           #+#    #+#              #
-#    Updated: 2023/06/23 15:14:20 by tgernez          ###   ########.fr        #
+#    Updated: 2023/06/25 19:38:32 by tgernez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ CLAS	= 	$(addsuffix .cpp,		\
 				ICharacter			\
 				Cure				\
 				Ice					\
-				IMaterialSource		\
+				IMateriaSource		\
 			))
 OBJS	= ${SRCS:.cpp=.o} ${CLAS:.cpp=.o}
 RM		= rm -rf

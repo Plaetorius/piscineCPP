@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:13:06 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/25 16:58:38 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/25 19:35:31 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class AMateria
 		virtual ~AMateria();
 		AMateria(const std::string &type);
 		const std::string &getType() const;
-		virtual	AMateria* clone() = 0;
+		virtual	AMateria* clone() const = 0;
 		virtual	void use(ICharacter &target);
 };
 

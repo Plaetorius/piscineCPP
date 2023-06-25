@@ -6,11 +6,12 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:21:33 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/20 18:38:41 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/25 19:36:13 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+#include "Character.hpp"
 #include <iostream>
 #include <string>
 
@@ -52,6 +53,5 @@ const std::string &AMateria::getType() const
 
 void AMateria::use(ICharacter &target)
 {
-	std::cout << "this shouldn't be displayed" << std::endl;
-	(void)target;
+	std::cout << this->_type << " is being thrown at " << target.getName() << std::endl;
 }

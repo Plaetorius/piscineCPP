@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 18:10:22 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/25 16:58:38 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/25 19:28:30 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ class Character : public ICharacter
 {
 	private:
 		std::string _name;
-		AMateria* _inventory[4];
-		int	items;
+		AMateria*	_inventory[4];
+		AMateria**	_trash;
+		int			_trash_count;
+		int			_items_count;
 	public:
 		Character();
 		Character(const  Character &obj);
