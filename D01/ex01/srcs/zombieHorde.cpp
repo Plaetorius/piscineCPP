@@ -6,31 +6,31 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:39:08 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/23 21:51:54 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/25 18:06:58 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-/*
-CALLS DESTRUCTOR TWICE PER ZOMBIE
 
-Zombie* zombieHorde(int N, std::string name)
-{
-	Zombie* horde = new Zombie[N];
+// CALLS DESTRUCTOR TWICE PER ZOMBIE
 
-	if (!horde)
-	{
-		std::cout << "Failed allocation" << std::endl;
-		return (NULL);
-	}
-	for (int i = 0; i < N; ++i)
-	{
-		horde[i] = Zombie(name);
-	}
-	return (horde);	
-}
-*/
+// Zombie* zombieHorde(int N, std::string name)
+// {
+// 	Zombie* horde = new Zombie[N];
+
+// 	if (!horde)
+// 	{
+// 		std::cout << "Failed allocation" << std::endl;
+// 		return (NULL);
+// 	}
+// 	for (int i = 0; i < N; ++i)
+// 	{
+// 		horde[i] = Zombie(name);
+// 	}
+// 	return (horde);	
+// }
+
 
 Zombie* zombieHorde(int N, std::string name)
 {
@@ -47,4 +47,3 @@ Zombie* zombieHorde(int N, std::string name)
 	}
 	return (horde);	
 }
-

@@ -6,14 +6,14 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:21:49 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/20 17:11:37 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/25 16:58:38 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICE_H
 # define ICE_H
 
-# pragma once
+
 # include "AMateria.hpp"
 # include "ICharacter.hpp"
 # include <string>

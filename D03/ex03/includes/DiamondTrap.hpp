@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 11:18:27 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/24 21:47:32 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/25 18:46:31 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define DIAMONDTRAP_H
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
-# pragma once
 # include <string>
 
 class DiamondTrap : public FragTrap, public ScavTrap 
@@ -33,7 +32,6 @@ class DiamondTrap : public FragTrap, public ScavTrap
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-
 };
 
 #endif

@@ -6,14 +6,14 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:21:45 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/20 18:19:10 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/25 16:58:38 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_H
 # define ICHARACTER_H
 
-# pragma once
+
 # include <string>
 
 class AMateria;

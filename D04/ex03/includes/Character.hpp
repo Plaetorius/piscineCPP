@@ -6,14 +6,14 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 18:10:22 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/20 18:19:54 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/25 16:58:38 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARACTER_H
 # define CHARACTER_H
 
-# pragma once
+
 # include "AMateria.hpp"
 # include "ICharacter.hpp"
 # include <string>

@@ -6,14 +6,14 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 13:42:35 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/23 14:40:21 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/25 16:58:38 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef POINT_H
 # define POINT_H
 
-# pragma once
+
 # include "Fixed.hpp"
 
 class Point

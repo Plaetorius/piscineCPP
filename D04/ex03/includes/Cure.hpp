@@ -6,14 +6,14 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:21:47 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/20 17:17:24 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/25 16:58:37 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CURE_H
 # define CURE_H
 
-# pragma once
+
 # include "AMateria.hpp"
 # include "ICharacter.hpp"
 # include <string>
