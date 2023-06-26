@@ -6,13 +6,13 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 18:10:22 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/25 19:28:30 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/26 09:53:15 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARACTER_H
 # define CHARACTER_H
-
+# define INVENTORY_SIZE 4
 
 # include "AMateria.hpp"
 # include "ICharacter.hpp"
@@ -22,10 +22,9 @@ class Character : public ICharacter
 {
 	private:
 		std::string _name;
-		AMateria*	_inventory[4];
+		AMateria*	_inventory[INVENTORY_SIZE];
 		AMateria**	_trash;
-		int			_trash_count;
-		int			_items_count;
+		int			_trash_count = 0;
 	public:
 		Character();
 		Character(const  Character &obj);

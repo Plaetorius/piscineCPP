@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 18:11:18 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/25 19:29:11 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/26 09:52:13 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Character::Character()
 {
 	std::cout << "Default Character constructor called" << std::endl;
 	this->_name = "default";
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < INVENTORY_SIZE; i++)
 		this->_inventory[i] = NULL;
 	this->_items_count = 0;
 }
@@ -27,10 +27,12 @@ Character::Character()
 Character::Character(const Character &obj)
 {
 	std::cout << "Copy Character constructor called" << std::endl;
-	if (this != &obj)
 	this->_name = obj._name;
-	for (int i = 0; i < obj._items_count; i++)
-    	this->_inventory[i] = obj._inventory[i]->clone();
+	for (int i = 0; i < INVENTORY_SIZE; i++)
+	{
+		if (obj._inventory[i] != NULL)
+    		this->_inventory[i] = obj._inventory[i]->clone();
+	}
 	this->_items_count = obj._items_count;
 }
 
@@ -40,10 +42,18 @@ Character& Character::operator=(const Character &rhs)
 	if (this == &rhs)
 		return (*this);
 	this->_name = rhs._name;
-	for (int i = 0; i < this->_items_count; i++)
-		delete this->_inventory[i];
-	for (int i = 0; i < rhs._items_count; i++)
-    	this->_inventory[i] = rhs._inventory[i]->clone();
+	for (int i = 0; i < INVENTORY_SIZE; i++)
+	{
+		if (this->_inventory[i])
+			delete this->_inventory[i];
+		this->_inventory[i] = NULL;
+	}
+	for (int i = 0; i < INVENTORY_SIZE; i++)
+	{
+		if (rhs._inventory[i] != NULL)
+    		this->_inventory[i] = rhs._inventory[i]->clone();
+		
+	}
 	this->_items_count = rhs._items_count;
 	return (*this);
 }
@@ -51,9 +61,10 @@ Character& Character::operator=(const Character &rhs)
 Character::~Character()
 {
 	std::cout << "Character destructor called" << std::endl;
-	for (int i = 0; i < this->_items_count; i++)
+	for (int i = 0; i < INVENTORY_SIZE; i++)
 	{
-		delete 
+		if (this->_inventory[i] != NULL)
+			delete _inventory[i];
 	}
 }
 
