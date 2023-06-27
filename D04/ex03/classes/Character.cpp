@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 18:11:18 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/27 11:32:00 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/27 12:09:59 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,11 @@ void Character::equip(AMateria* m)
 {
 	int first_free = -1;
 
+	if (m == NULL)
+	{
+		std::cout << "Invalid materia!" << std::endl;
+		return ;
+	}
 	if (count_items() == INVENTORY_SIZE)
 	{
 		std::cout << "Inventory is already full! Can't equip " << m->getType() << "!" << std::endl;
@@ -134,8 +139,14 @@ void Character::use(int idx, ICharacter& target)
 {
 	if (check_slot(idx == false))
 		return ;
+	if (this->_inventory[idx - 1] == NULL)
+	{
+		std::cout << "The slot " << idx << " is empty! " << this->getName()
+			<< " can't do anything!" << std::endl;
+		return ;
+	}
 	std::cout << "Using " << this->_inventory[idx - 1]->getType()
-		<< " stored at id " << idx << "!" << std::endl;
+		<< " stored in slot " << idx << "!" << std::endl;
 	this->_inventory[idx - 1]->use(target);
 	push_trash(idx, this->_inventory[idx - 1]);
 }
@@ -169,7 +180,8 @@ void Character::push_trash(int idx, AMateria *to_trash)
 	
 	tmp_trash = this->_trash;
 	this->_trash = to_trash;
-	to_trash->_next = tmp_trash;
+	if (to_trash) //Impossible but protection is good 
+		to_trash->_next = tmp_trash;
 	if (idx != -1)
 		this->_inventory[idx - 1] = NULL;
 }
