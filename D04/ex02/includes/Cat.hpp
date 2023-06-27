@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 17:53:17 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/25 16:58:38 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/27 20:50:51 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ class Cat : public AAnimal
 		Cat& operator=(const Cat &rhs);
 		void makeSound(void) const;
 		~Cat();
+
+		void	change_idea(std::string idea, int i);
+		void	display_ideas();
+		Brain*	get_brain();
 };
 
 #endif
