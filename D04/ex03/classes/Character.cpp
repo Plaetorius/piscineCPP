@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 18:11:18 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/27 12:09:59 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/27 12:53:40 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,6 +137,7 @@ void Character::unequip(int idx)
 */
 void Character::use(int idx, ICharacter& target)
 {
+	std::cout << "Idx in use: "  << idx << s
 	if (check_slot(idx == false))
 		return ;
 	if (this->_inventory[idx - 1] == NULL)
