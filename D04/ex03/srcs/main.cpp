@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:21:57 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/27 15:35:53 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/27 15:37:11 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "ICharacter.hpp"
 #include "IMateriaSource.hpp"
 #include "AMateria.hpp"
+#include "MateriaSource.hpp"
 #include <iostream>
 
 
@@ -107,7 +108,9 @@ int main(void)
 	player_4.display_trash();
 
 	std::cout << "-------------------------TEST 5-------------------------" << std::endl;
-	
+	MateriaSource materia_source_1 = MateriaSource();
+
+	materia_source_1.display_materias();
 
 	return 0;
 }
