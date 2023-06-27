@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:21:40 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/25 19:36:32 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/27 11:01:05 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 Ice::Ice()
 {
 	std::cout << "Default Ice constructor called" << std::endl;
+	this->_type = "ice";
 }
 
 Ice::Ice(const Ice &obj)
