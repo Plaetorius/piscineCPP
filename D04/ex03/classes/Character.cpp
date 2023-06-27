@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 18:11:18 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/27 12:53:40 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/27 14:58:49 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 #include "Character.hpp"
 #include <iostream>
 
+/*
+	Characters don't copy each other's trash, because the items left on the floor
+	can be managed as we want to.
+	Moreover, as a trash is useless, it doesn't harm the code or any other process.
+	Items can't be used / equiped / unequiped by any Character when trashed.
+*/
+ 
 Character::Character()
 {
 	std::cout << "Default Character constructor called" << std::endl;
@@ -22,7 +29,6 @@ Character::Character()
 	for (int i = 0; i < INVENTORY_SIZE; i++)
 		this->_inventory[i] = NULL;
 	this->_trash = NULL;
-	this->_trash_count = 0;
 }
 
 Character::Character(const Character &obj)
@@ -33,9 +39,10 @@ Character::Character(const Character &obj)
 	{
 		if (obj._inventory[i] != NULL)
     		this->_inventory[i] = obj._inventory[i]->clone();
+		else
+			this->_inventory[i] = NULL;
 	}
-	this->_trash = obj._trash;
-	this->_trash_count = obj._trash_count;
+	this->_trash = NULL;
 }
 
 Character& Character::operator=(const Character &rhs)
@@ -46,11 +53,17 @@ Character& Character::operator=(const Character &rhs)
 	this->_name = rhs._name;
 	for (int i = 0; i < INVENTORY_SIZE; i++)
 	{
+		if (this->_inventory[i])
+		{
+			delete this->_inventory[i];
+			this->_inventory[i] = NULL;
+		}
 		if (rhs._inventory[i] != NULL)
     		this->_inventory[i] = rhs._inventory[i]->clone();
+		else
+			this->_inventory[i] = NULL;
 	}
-	this->_trash = rhs._trash;
-	this->_trash_count = rhs._trash_count;
+	this->_trash = NULL;
 	return (*this);
 }
 
@@ -70,7 +83,8 @@ Character::~Character()
 	{
 		tmp_trash = this->_trash;
 		_trash = _trash->_next;
-		delete tmp_trash;		
+		if (tmp_trash)
+			delete tmp_trash;		
 	}
 }
 
@@ -81,7 +95,6 @@ Character::Character(std::string name)
 	for (int i = 0; i < INVENTORY_SIZE; i++)
 		this->_inventory[i] = NULL;
 	this->_trash = NULL;
-	this->_trash_count = 0;
 }
 
 const std::string &Character::getName() const
@@ -114,20 +127,19 @@ void Character::equip(AMateria* m)
 		}	
 	}
 	this->_inventory[first_free] = m;
-	std::cout << "Equiped " << m->getType() << " in slot " << first_free + 1 << std::endl;
+	std::cout << "Equiped " << m->getType() << " in slot " << first_free << std::endl;
 }
 
 /*
-	Inventory slots start at 0 ; however, the entry are expected to start
-	at 1, just like in the normal way of counting things
+	Inventory slots couting starts at 0
 */
 void Character::unequip(int idx) 
 {
 	if (check_slot(idx) == false)
 		return ;
-	std::cout << "Unequiped " << this->_inventory[idx - 1]->getType()
+	std::cout << "Unequiped " << this->_inventory[idx]->getType()
 			<< ", previously stored in slot " << idx << std::endl;
-	push_trash(idx, this->_inventory[idx - 1]);
+	push_trash(idx, this->_inventory[idx]);
 }
 
 /*
@@ -137,28 +149,27 @@ void Character::unequip(int idx)
 */
 void Character::use(int idx, ICharacter& target)
 {
-	std::cout << "Idx in use: "  << idx << s
-	if (check_slot(idx == false))
+	if (check_slot(idx) == false)
 		return ;
-	if (this->_inventory[idx - 1] == NULL)
+	if (this->_inventory[idx] == NULL)
 	{
 		std::cout << "The slot " << idx << " is empty! " << this->getName()
 			<< " can't do anything!" << std::endl;
 		return ;
 	}
-	std::cout << "Using " << this->_inventory[idx - 1]->getType()
+	std::cout << "Using " << this->_inventory[idx]->getType()
 		<< " stored in slot " << idx << "!" << std::endl;
-	this->_inventory[idx - 1]->use(target);
-	push_trash(idx, this->_inventory[idx - 1]);
+	this->_inventory[idx]->use(target);
+	push_trash(idx, this->_inventory[idx]);
 }
 
 bool Character::check_slot(int idx)
-{	if (!(1 <= idx && idx <= INVENTORY_SIZE))
+{	if (!(0 <= idx && idx < INVENTORY_SIZE))
 	{
 		std::cout << idx << " isn't a correct inventory slot number!" << std::endl;
 		return (false);
 	}
-	if (this->_inventory[idx - 1] == NULL)
+	if (this->_inventory[idx] == NULL)
 	{
 		std::cout << idx << " is empty!" << std::endl;
 		return (false);
@@ -184,12 +195,12 @@ void Character::push_trash(int idx, AMateria *to_trash)
 	if (to_trash) //Impossible but protection is good 
 		to_trash->_next = tmp_trash;
 	if (idx != -1)
-		this->_inventory[idx - 1] = NULL;
+		this->_inventory[idx] = NULL;
 }
 
 void Character::empty_inventory()
 {
-	for (int i = 1; i < INVENTORY_SIZE + 1; i++)
+	for (int i = 0; i < INVENTORY_SIZE; i++)
 		this->unequip(i);
 }
 
@@ -204,9 +215,9 @@ void Character::display_inventory()
 	for (int i = 0; i < INVENTORY_SIZE; i++)
 	{
 		if (this->_inventory[i] == NULL)
-			std::cout << i + 1 << ". Empty" << std::endl;
+			std::cout << i << ". Empty" << std::endl;
 		else
-			std::cout << i + 1 << ". " << this->_inventory[i]->getType() << std::endl;
+			std::cout << i << ". " << this->_inventory[i]->getType() << std::endl;
 	}
 	std::cout << "===============================================" << std::endl;
 }
@@ -214,7 +225,7 @@ void Character::display_inventory()
 void Character::display_trash()
 {
 	AMateria	*tmp_trash = this->_trash;
-	int			i = 1;
+	int			i = 0;
 	
 	std::cout << "***********************************************" << std::endl;
 	std::cout << "Trash of " << this->getName() << ":" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:21:57 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/27 12:08:40 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/27 15:35:53 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include "ICharacter.hpp"
 #include "IMateriaSource.hpp"
 #include "AMateria.hpp"
+#include <iostream>
+
 
 /*
 	You are not supposed to be able to take items out of the trash
@@ -23,12 +25,14 @@
 
 int main(void)
 {
-	Cure*		cure_1;
-	Ice*		ice_1;
-	Cure*		cure_2;
-	Ice*		ice_2;
-	Cure*		cure_3;
-	Character 	player_1("Bob");
+	std::cout << "-------------------------TEST 1-------------------------" << std::endl;
+
+	Cure*			cure_1;
+	Ice*			ice_1;
+	Cure*			cure_2;
+	Ice*			ice_2;
+	Cure*			cure_3;
+	Character	 	player_1("Bob");
 
 	cure_1 = new Cure("Cure 1");
 	ice_1 = new Ice("Ice 1");
@@ -52,10 +56,11 @@ int main(void)
 	player_1.display_inventory();
 	player_1.display_trash();
 
-	Character	player_2("Jack");
-	Cure*		cure_4;
+	std::cout << "-------------------------TEST 2-------------------------" << std::endl;
+	Character		player_2("Jack");
+	Cure*			cure_4;
 	Ice*			ice_4;
-	Cure*		cure_5;
+	Cure*			cure_5;
 	Ice*			ice_5;
 
 	cure_4 = new Cure("Cure 4");
@@ -67,7 +72,42 @@ int main(void)
 	player_1.equip(ice_4);
 	player_2.equip(cure_5);
 	player_2.equip(ice_5);
-	player_1.use(2, player_2);
-	// player_1.use(3, player_2);
+	player_1.use(1, player_2);
+	player_1.use(3, player_2);
+	player_1.display_inventory();
+	player_1.display_trash();
+	player_2.unequip(1);
+
+	std::cout << "-------------------------TEST 3-------------------------" << std::endl;
+	
+	Character		player_3(player_1);
+	Cure*			cure_tmp;
+
+	cure_tmp = new Cure(*cure_5);
+	player_3.display_inventory();
+	player_3.display_trash();
+	player_3.equip(cure_tmp);
+	player_3.display_inventory();
+	
+	std::cout << "-------------------------TEST 4-------------------------" << std::endl;
+	std::cout << "Original Content (player 2):" << std::endl;
+	player_2.display_inventory();
+	player_2.display_trash();
+
+	Character		player_4 = player_2;
+	Cure*			cure_op;
+
+	cure_op = cure_1->clone();
+	player_4.display_inventory();
+	player_4.display_trash();
+	player_4.equip(cure_op);
+	player_4.display_inventory();
+	player_4.use(1, player_3);
+	player_4.display_inventory();
+	player_4.display_trash();
+
+	std::cout << "-------------------------TEST 5-------------------------" << std::endl;
+	
+
 	return 0;
 }
