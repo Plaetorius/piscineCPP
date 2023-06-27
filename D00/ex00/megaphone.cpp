@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 12:08:17 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/11 12:08:18 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/25 20:37:51 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	upper_arguments(int ac, char *av[])
 	{
 		std::string arg(av[i]);
 		std::locale loc;
-
 		for (std::string::size_type j = 0; j < arg.length(); ++j)
 		{
 			arg[j] = std::toupper(arg[j], loc);

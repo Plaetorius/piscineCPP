@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 18:11:18 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/26 09:52:13 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/26 19:09:46 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ Character::Character()
 	for (int i = 0; i < INVENTORY_SIZE; i++)
 		this->_inventory[i] = NULL;
 	this->_items_count = 0;
+	this->_trash = NULL;
+	this->_trash_count = 0;
 }
 
 Character::Character(const Character &obj)
@@ -34,6 +36,8 @@ Character::Character(const Character &obj)
     		this->_inventory[i] = obj._inventory[i]->clone();
 	}
 	this->_items_count = obj._items_count;
+	this->_trash = obj._trash;
+	this->_trash_count = obj._trash_count;
 }
 
 Character& Character::operator=(const Character &rhs)
@@ -42,19 +46,22 @@ Character& Character::operator=(const Character &rhs)
 	if (this == &rhs)
 		return (*this);
 	this->_name = rhs._name;
-	for (int i = 0; i < INVENTORY_SIZE; i++)
-	{
-		if (this->_inventory[i])
-			delete this->_inventory[i];
-		this->_inventory[i] = NULL;
-	}
+	// for (int i = 0; i < INVENTORY_SIZE; i++)
+	// {
+	// 	if (this->_inventory[i])
+	// 		delete this->_inventory[i];
+	// 	this->_inventory[i] = NULL;
+	// }
+	// Probbly useless because the desctructor will be called
 	for (int i = 0; i < INVENTORY_SIZE; i++)
 	{
 		if (rhs._inventory[i] != NULL)
     		this->_inventory[i] = rhs._inventory[i]->clone();
-		
+
 	}
 	this->_items_count = rhs._items_count;
+	this->_trash = rhs._trash;
+	this->_trash_count = rhs._trash_count;
 	return (*this);
 }
 

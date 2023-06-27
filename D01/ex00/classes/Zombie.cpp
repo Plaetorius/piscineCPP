@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:39:11 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/24 16:20:07 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/24 16:43:44 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Zombie::Zombie(void)
 {
-	std::cout << "Default constructor has been created." << std::endl;	
+	std::cout << "Default constructor has been called." << std::endl;	
 }
 
 Zombie::Zombie(std::string desired_name)

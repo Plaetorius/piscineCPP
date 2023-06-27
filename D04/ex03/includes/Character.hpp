@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 18:10:22 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/26 09:53:15 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/26 19:07:32 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class Character : public ICharacter
 	private:
 		std::string _name;
 		AMateria*	_inventory[INVENTORY_SIZE];
-		AMateria**	_trash;
-		int			_trash_count = 0;
+		AMateria*	_trash;
+		int			_trash_count;
 	public:
 		Character();
 		Character(const  Character &obj);
@@ -34,6 +34,7 @@ class Character : public ICharacter
 		void equip(AMateria* m);
 		void unequip(int idx) ;
 		void use(int idx, ICharacter& target);
+		void push(AMateria *obj);
 };
 
 #endif
