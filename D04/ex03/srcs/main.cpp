@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:21:57 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/27 15:37:11 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/27 16:25:56 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@
 
 int main(void)
 {
+	/*
+		MY TESTS
+	*/
 	std::cout << "-------------------------TEST 1-------------------------" << std::endl;
 
 	Cure*			cure_1;
@@ -108,9 +111,47 @@ int main(void)
 	player_4.display_trash();
 
 	std::cout << "-------------------------TEST 5-------------------------" << std::endl;
-	MateriaSource materia_source_1 = MateriaSource();
+	MateriaSource	materia_source_1 = MateriaSource();
+	MateriaSource	materia_source_2;
+	Character		player_5;
+	Cure*			cure_mat_source;
 
+	cure_mat_source = new Cure("P'tite cure la mmmmmmmmmmh");
+
+	materia_source_1.learnMateria(cure_mat_source);
 	materia_source_1.display_materias();
-
+	AMateria* cure_materias;
+	cure_materias = materia_source_1.createMateria("Cure Materia");
+	player_5.equip(cure_materias);
+	player_5.display_inventory();
+	
+	materia_source_2 = materia_source_1;
+	materia_source_2.display_materias();
+	
+	// /*
+	// 	TESTS FROM SUBJECT
+	// */
+	IMateriaSource* src = new MateriaSource();
+	
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	src->display_materias();
+	
+	ICharacter* me = new Character("me");
+	AMateria* tmp;
+	
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	
+	ICharacter* bob = new Character("bob");
+	
+	me->use(0, *bob);
+	me->use(1, *bob);
+	
+	delete bob;
+	delete me;
+	delete src;
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 14:06:10 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/27 15:35:03 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/27 16:21:35 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,7 @@ void MateriaSource::learnMateria(AMateria* m)
 		std::cout << "Bad Materia!" << std::endl;
 		return ;
 	}
-	
-	while (this->_materias[items] == NULL && items < MATERIAS_SIZE)
+	while (this->_materias[items] != NULL && items < MATERIAS_SIZE)
 	{
 		if (this->_materias[items] == m)
 		{
@@ -88,13 +87,14 @@ void MateriaSource::learnMateria(AMateria* m)
 		return ;
 	}
 	this->_materias[items] = m->clone();
+	delete m;
 }
 
 bool	MateriaSource::is_in_materias(const std::string &type)
 {
 	for (int i = 0; i < MATERIAS_SIZE; i++)
 	{
-		if (this->_materias[i]->getType() == type)
+		if (this->_materias[i] && this->_materias[i]->getType() == type)
 			return (true);
 	}
 	return (false);
@@ -104,11 +104,11 @@ AMateria* MateriaSource::createMateria(std::string const &type)
 {
 	int i;
 	
-	if (this->is_in_materias(type))
+	if (!this->is_in_materias(type))
 		return (NULL);
 	for (i = 0; i < MATERIAS_SIZE; i++)
 	{
-		if (this->_materias[i]->getType() == type)
+		if (this->_materias[i] && this->_materias[i]->getType() == type)
 			break;
 	}
 	return (this->_materias[i]->clone());
@@ -120,6 +120,10 @@ void MateriaSource::display_materias()
 	std::cout << "Content of Materias:" << std::endl;
 	for (int i = 0; i < MATERIAS_SIZE; i++)
 	{
-		std::cout << i << ". " << this->_materias[i] << std::endl;
+		if (this->_materias[i])
+			std::cout << i << ". " << this->_materias[i]->getType() << std::endl;
+		else
+			std::cout << i << ". Empty" << std::endl;
 	}
+	std::cout << "###############################################" << std::endl;
 }

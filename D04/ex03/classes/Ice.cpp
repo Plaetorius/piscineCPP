@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:21:40 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/27 14:27:46 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/27 16:29:48 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Ice& Ice::operator=(const Ice &rhs)
 
 Ice::~Ice()
 {
-	// std::cout << "Ice destructor called" << std::endl;
+	std::cout << "Ice destructor called" << std::endl;
 }
 
 Ice::Ice(const std::string &type)
