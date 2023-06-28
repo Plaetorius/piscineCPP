@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 18:09:27 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/17 22:16:18 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/28 09:31:22 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,57 @@
 
 int main()
 {
-	Animal* animals[10];
+	Cat *Cats[5];
+	Dog *Dogs[5];
+	Cat	operator_cat;
 	
 	for (int i = 0; i < 5; ++i)
-		animals[i] = new Cat();
-
-	for (int i = 5; i < 10; ++i)
-		animals[i] = new Dog();
-
-	for (int i = 0; i < 10; ++i)
 	{
-		std::cout << animals[i]->getType() << " " << std::endl;
-		animals[i]->makeSound();
+		Cats[i] = new Cat();
+		Dogs[i] = new Dog();
 	}
 
-	for (int i = 0; i < 10; ++i)
-		delete animals[i];
+	for (int i = 0; i < 5; ++i)
+	{
+		std::cout << Cats[i]->getType() << " " << std::endl;
+		Cats[i]->makeSound();
+		std::cout << Dogs[i]->getType() << " " << std::endl;
+		Dogs[i]->makeSound();	
+	}
 
-	return 0;
+	std::cout << "*****************Operator= Test*****************" << std::endl;
+	Cats[0]->changeIdea("bonjour", 0);
+	std::cout << "Cats[0] Ideas" << std::endl;
+	Cats[0]->displayIdeas();
+	operator_cat = *Cats[0];
+	std::cout << "Operator Cat Ideas" << std::endl;
+	operator_cat.displayIdeas();
+	
+	std::cout << "*****************Shallow Copy Test (operator=)*****************" << std::endl;
+	operator_cat.changeIdea("shallow ou quoi", 1);
+	std::cout << "Cats[0] Ideas" << std::endl;
+	Cats[0]->displayIdeas();
+	std::cout << "Operator Cat Ideas" << std::endl;
+	operator_cat.displayIdeas();
+
+	std::cout << "*****************Copy Constructor Test*****************" << std::endl;
+	Cats[1]->changeIdea("HIIII", 0);
+	std::cout << "Cats[1] Ideas" << std::endl;
+	Cats[1]->displayIdeas();
+	Cat copy_cat(*Cats[1]);
+	std::cout << "Copy Cat Ideas" << std::endl;
+	copy_cat.displayIdeas();
+	
+	std::cout << "*****************Shallow Copy Test (Copy Constructor)*****************" << std::endl;
+	copy_cat.changeIdea("shallow ou bien?", 1);
+	std::cout << "Cats[1] Ideas" << std::endl;
+	Cats[1]->displayIdeas();
+	std::cout << "Copy Cat Ideas" << std::endl;
+	copy_cat.displayIdeas();
+
+	for (int i = 0; i < 5; ++i)
+	{
+		delete Cats[i];
+		delete Dogs[i];
+	}
 }

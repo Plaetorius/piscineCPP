@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 17:53:17 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/27 20:50:51 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/28 09:25:57 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,8 @@ class Cat : public AAnimal
 		void makeSound(void) const;
 		~Cat();
 
-		void	change_idea(std::string idea, int i);
-		void	display_ideas();
-		Brain*	get_brain();
+		void	changeIdea(std::string idea, int i);
+		void	displayIdeas();
 };
 
 #endif

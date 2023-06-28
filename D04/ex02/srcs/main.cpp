@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 18:09:27 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/27 20:53:11 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/28 09:31:07 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ int main()
 {
 	Cat *Cats[5];
 	Dog *Dogs[5];
-	Cat	independant_cat;
-
+	Cat	operator_cat;
 	
 	for (int i = 0; i < 5; ++i)
 	{
@@ -36,25 +35,39 @@ int main()
 		Dogs[i]->makeSound();	
 	}
 
-	// Cats[0]->change_idea("bonjour", 0);
-	// std::cout << "Cats[0] Ideas" << std::endl;
-	// Cats[0]->display_ideas();
-
-	independant_cat = *Cats[0];
-	// std::cout << "Independant Cat Ideas" << std::endl;
-	// independant_cat->display_ideas();
+	std::cout << "*****************Operator= Test*****************" << std::endl;
+	Cats[0]->changeIdea("bonjour", 0);
+	std::cout << "Cats[0] Ideas" << std::endl;
+	Cats[0]->displayIdeas();
+	operator_cat = *Cats[0];
+	std::cout << "Operator Cat Ideas" << std::endl;
+	operator_cat.displayIdeas();
 	
-	// std::cout << "*****************Shallow Copy Test*****************" << std::endl;
-	// independant_cat->change_idea("shallow ou quoi", 1);
-	// std::cout << "Cats[0] Ideas" << std::endl;
-	// Cats[0]->display_ideas();
-	// std::cout << "Independant Cat Ideas" << std::endl;
-	// independant_cat->display_ideas();
+	std::cout << "*****************Shallow Copy Test (operator=)*****************" << std::endl;
+	operator_cat.changeIdea("shallow ou quoi", 1);
+	std::cout << "Cats[0] Ideas" << std::endl;
+	Cats[0]->displayIdeas();
+	std::cout << "Operator Cat Ideas" << std::endl;
+	operator_cat.displayIdeas();
+
+	std::cout << "*****************Copy Constructor Test*****************" << std::endl;
+	Cats[1]->changeIdea("HIIII", 0);
+	std::cout << "Cats[1] Ideas" << std::endl;
+	Cats[1]->displayIdeas();
+	Cat copy_cat(*Cats[1]);
+	std::cout << "Copy Cat Ideas" << std::endl;
+	copy_cat.displayIdeas();
+	
+	std::cout << "*****************Shallow Copy Test (Copy Constructor)*****************" << std::endl;
+	copy_cat.changeIdea("shallow ou bien?", 1);
+	std::cout << "Cats[1] Ideas" << std::endl;
+	Cats[1]->displayIdeas();
+	std::cout << "Copy Cat Ideas" << std::endl;
+	copy_cat.displayIdeas();
 
 	for (int i = 0; i < 5; ++i)
 	{
 		delete Cats[i];
 		delete Dogs[i];
 	}
-
 }

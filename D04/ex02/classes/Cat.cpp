@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 17:53:13 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/27 20:51:17 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/28 09:26:05 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,10 @@ Cat& Cat::operator=(const Cat &rhs)
 	std::cout << "Cat Assignment Operator called" << std::endl;
 	if (this == &rhs)
 	{
-		std::cout << "operator= is the same********************************" << std::endl;
 		return (*this);
 	}
+	delete this->_brain;
 	this->_type = rhs._type;
-	std::cout << &this->_brain << " / " << rhs._brain << std::endl;
 	this->_brain = new Brain(*rhs._brain);
 	return (*this);
 }
@@ -53,17 +52,12 @@ Cat::~Cat()
 	std::cout << "Cat destructor called" << std::endl;
 }
 
-void	Cat::change_idea(std::string idea, int i)
+void	Cat::changeIdea(std::string idea, int i)
 {
-	this->_brain->change_idea(idea, i);
+	this->_brain->changeIdea(idea, i);
 }
 
-void	Cat::display_ideas()
+void	Cat::displayIdeas()
 {
-	this->_brain->display_ideas();
-}
-
-Brain*	Cat::get_brain()
-{
-	return (this->_brain);
+	this->_brain->displayIdeas();
 }

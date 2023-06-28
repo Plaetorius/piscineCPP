@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 21:59:50 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/27 19:25:46 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/28 09:32:28 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Brain& Brain::operator=(const Brain &rhs)
 		return (*this);
 	for (int i = 0; i < 100; i++)
 		this->_ideas[i] = rhs._ideas[i];
-	return *this;
+	return (*this);
 }
 
 Brain::~Brain()
@@ -43,7 +43,7 @@ Brain::~Brain()
 	std::cout << "Brain destructor called" << std::endl;
 }
 
-void	Brain::change_idea(std::string idea, int i)
+void	Brain::changeIdea(std::string idea, int i)
 {
 	if (i < 0 || i > 99)
 	{
@@ -53,7 +53,7 @@ void	Brain::change_idea(std::string idea, int i)
 	this->_ideas[i] = idea;
 }
 
-void	Brain::display_ideas()
+void	Brain::displayIdeas()
 {
 	std::cout << "=========================IDEAS=========================" << std::endl;
 	for (int i = 0; i < 100; i++)
@@ -63,4 +63,5 @@ void	Brain::display_ideas()
 		else
 			std::cout << i << ". " << this->_ideas[i] << std::endl; 
 	}
+	std::cout << "=======================================================" << std::endl;
 }
