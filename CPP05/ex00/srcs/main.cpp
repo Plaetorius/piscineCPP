@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/29 18:07:34 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/29 18:09:11 by tgernez          ###   ########.fr       */
+/*   Created: 2023/06/29 18:07:32 by tgernez           #+#    #+#             */
+/*   Updated: 2023/06/30 14:10:50 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_H
-# define BUREAUCRAT_H
-# include <string>
+#include "Bureaucrat.hpp"
+#include <iostream>
+#include <string>
 
-class Bureaucrat
+int main()
 {
-	private:
-		const std::string	_name;
-		int					_grade;
-	public:
-		Bureaucrat();
-		Bureaucrat(const  Bureaucrat &obj);
-		Bureaucrat& operator=(const Bureaucrat &rhs);
-		~Bureaucrat();
-};
+	Bureaucrat bureaucrat_1;
 
-#endif
+	std::cout << bureaucrat_1 << std::endl;
+	catch (const char *exception)
+	{
+		std::cout << "pas cool ca" << std::endl;
+	}
+}
