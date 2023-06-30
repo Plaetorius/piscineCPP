@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:21:33 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/26 19:06:09 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/27 11:17:20 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ AMateria::AMateria(const std::string &type)
 {
 	std::cout << "String AMateria constructor called" << std::endl;
 	this->_type = type;
-	this->_type = NULL;
+	this->_next = NULL;
 }
 
 const std::string &AMateria::getType() const

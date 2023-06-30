@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:13:06 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/26 19:02:28 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/27 11:17:12 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class AMateria
 {
 	protected:
 		std::string	_type;
-		AMateria*	_next;
 	public:
 		AMateria();
 		AMateria(const  AMateria &obj);
@@ -31,6 +30,8 @@ class AMateria
 		const std::string &getType() const;
 		virtual	AMateria* clone() const = 0;
 		virtual	void use(ICharacter &target);
+		
+		AMateria*	_next;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 18:20:06 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/20 18:39:43 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/06/28 09:19:45 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ Dog& Dog::operator=(const Dog &rhs)
 	std::cout << "Dog Assignment Operator called" << std::endl;
 	if (this == &rhs)
 		return (*this);
-	AAnimal::operator=(rhs);
-	delete _brain;
-	_brain = new Brain(*rhs._brain);
+	delete this->_brain;
+	this->_type = rhs._type;
+	this->_brain = new Brain(*rhs._brain);
 	return *this;
 }
 
@@ -48,4 +48,14 @@ Dog::~Dog()
 {
 	delete _brain;
 	std::cout << "Dog destructor called" << std::endl;
+}
+
+void	Dog::changeIdea(std::string idea, int i)
+{
+	this->_brain->changeIdea(idea, i);
+}
+
+void	Dog::displayIdeas()
+{
+	this->_brain->displayIdeas();
 }
