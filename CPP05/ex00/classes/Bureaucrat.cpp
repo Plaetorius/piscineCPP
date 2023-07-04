@@ -6,22 +6,21 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 18:07:36 by tgernez           #+#    #+#             */
-/*   Updated: 2023/06/30 14:08:14 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/07/04 12:16:12 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include <iostream>
 
-Bureaucrat::Bureaucrat() : _name("unknown"), _grade(150)
+Bureaucrat::Bureaucrat() : _name("Unknown"), _grade(150)
 {
 	std::cout << "Default Bureaucrat constructor called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &obj) : _name(obj._name)
+Bureaucrat::Bureaucrat(const Bureaucrat &obj): _name(obj._name), _grade(obj._grade)
 {
 	std::cout << "Copy Bureaucrat constructor called" << std::endl;
-	this->_grade = obj._grade;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &rhs)
@@ -42,11 +41,8 @@ Bureaucrat::~Bureaucrat()
 
 void	Bureaucrat::tryCatchGrade(int grade)
 {
-	try 
-	{
-		if (grade < 1) 			throw ("Bureaucrat::GradeTooLowException");
-		else if (grade > 150)	throw ("Bureaucrat::GradeTooHighException");
-	}	
+	if (grade < 1) 			throw (Bureaucrat::GradeTooHighException());
+	else if (grade > 150)	throw (Bureaucrat::GradeTooLowException());
 }
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name)
@@ -57,28 +53,28 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name)
 	this->_grade = grade;
 }
 
-int	Bureaucrat::getGrade()
+int	Bureaucrat::getGrade() const
 {
 	return (this->_grade);
 }
 
-const std::string Bureaucrat::getName()
+const std::string Bureaucrat::getName() const
 {
 	return (this->_name);
 }
 
-void	Bureaucrat::promote(int grade)
+void	Bureaucrat::promote()
 {
-	tryCatchGrade(grade - 1);
-	this->_grade = grade - 1;
-	std::cout << this->_name << " has been promoted to grade " << grade << "! Congrats!" << std::endl;
+	tryCatchGrade(this->_grade - 1);
+	this->_grade -= 1;
+	std::cout << this->_name << " has been promoted to grade " << this->_grade << "! Congrats!" << std::endl;
 }
 
-void	Bureaucrat::demote(int grade)
+void	Bureaucrat::demote()
 {
-	tryCatchGrade(grade + 1);
-	this->_grade = grade + 1;
-	std::cout << this->_name << " has been demoted to grade " << grade << "! Looser!" << std::endl;
+	tryCatchGrade(this->_grade + 1);
+	this->_grade += 1;
+	std::cout << this->_name << " has been demoted to grade " << this->_grade << "! Looser!" << std::endl;
 }
 
 std::ostream&	operator<<(std::ostream& os, const Bureaucrat &obj)
