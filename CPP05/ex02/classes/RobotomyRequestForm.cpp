@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 10:24:20 by tgernez           #+#    #+#             */
-/*   Updated: 2023/07/05 11:41:12 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/07/05 11:57:11 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &r
 		std::cout << "RobotomyRequestForm Assignment operator called" << std::endl;
 	if (this == &rhs)
 		return (*this);
-	this->operator=(rhs);
+	this->Form::operator=(rhs);
 	this->_target = rhs._target;
 	return (*this);
 }
@@ -68,4 +68,19 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 	else
 		std::cout << this->_target << " may have to cope with some headaches, his robotomization failed!" << std::endl;
 	++random;
+}
+
+std::string RobotomyRequestForm::getTarget() const
+{
+	return (this->_target);
+}
+
+std::ostream&	operator<<(std::ostream& os, const RobotomyRequestForm &obj)
+{
+	os << "Name: " << obj.getName() << std::endl
+		<< "Signed: " << obj.getSigned() << std::endl
+		<< "Sign Grade: " << obj.getSignGrade() << std::endl
+		<< "Exec Grade: " << obj.getExecGrade() << std::endl
+		<< "Target: " << obj.getTarget();
+	return (os);
 }

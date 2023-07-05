@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 10:24:22 by tgernez           #+#    #+#             */
-/*   Updated: 2023/07/05 11:41:04 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/07/05 11:57:18 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 		std::cout << "ShrubberyCreationForm Assignment operator called" << std::endl;
 	if (this == &rhs)
 		return (*this);
-	this->operator=(rhs);
+	this->Form::operator=(rhs);
 	this->_target = rhs._target;
 	return (*this);
 }
@@ -71,4 +71,19 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	}
 	else
 		throw ShrubberyCreationForm::FileCreate();
+}
+
+std::string ShrubberyCreationForm::getTarget() const
+{
+	return (this->_target);
+}
+
+std::ostream&	operator<<(std::ostream& os, const ShrubberyCreationForm &obj)
+{
+	os << "Name: " << obj.getName() << std::endl
+		<< "Signed: " << obj.getSigned() << std::endl
+		<< "Sign Grade: " << obj.getSignGrade() << std::endl
+		<< "Exec Grade: " << obj.getExecGrade() << std::endl
+		<< "Target: " << obj.getTarget();
+	return (os);
 }

@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 10:24:16 by tgernez           #+#    #+#             */
-/*   Updated: 2023/07/05 11:22:27 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/07/05 11:50:32 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class ShrubberyCreationForm : public Form
 
 		ShrubberyCreationForm(const std::string &target);
 		void execute(Bureaucrat const & executor) const;
+		std::string getTarget() const;
 
 	class FileCreate: public std::exception
 	{
@@ -38,5 +39,7 @@ class ShrubberyCreationForm : public Form
 			} 
 	};
 };
+
+std::ostream&	operator<<(std::ostream& os, const ShrubberyCreationForm &obj);
 
 #endif

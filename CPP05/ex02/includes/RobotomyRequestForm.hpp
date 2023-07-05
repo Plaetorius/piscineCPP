@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 10:24:14 by tgernez           #+#    #+#             */
-/*   Updated: 2023/07/05 10:56:02 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/07/05 11:50:24 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ class RobotomyRequestForm : public Form
 
 		RobotomyRequestForm(const std::string &target);
 		void execute(Bureaucrat const & executor) const;
+		std::string getTarget() const;
+
 };
+
+std::ostream&	operator<<(std::ostream& os, const RobotomyRequestForm &obj);
 
 #endif

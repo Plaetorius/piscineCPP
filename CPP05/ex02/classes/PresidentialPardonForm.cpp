@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 10:24:18 by tgernez           #+#    #+#             */
-/*   Updated: 2023/07/05 11:41:17 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/07/05 11:56:39 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 	std::cout << "PresidentialPardonForm Assignment operator called" << std::endl;
 	if (this == &rhs)
 		return (*this);
-	this->operator=(rhs);
+	this->Form::operator=(rhs);
 	this->_target = rhs._target;
 	return (*this);
 }
@@ -50,4 +50,22 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 	if (executor.getGrade() > this->getExecGrade())
 		throw Form::GradeTooHighException();
 	std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox. Enjoy!" << std::endl;
+}
+
+std::string PresidentialPardonForm::getTarget() const
+{
+	return (this->_target);
+}
+
+/*
+	We create a new overload to ease the comparaisons
+*/
+std::ostream&	operator<<(std::ostream& os, const PresidentialPardonForm &obj)
+{
+	os << "Name: " << obj.getName() << std::endl
+		<< "Signed: " << obj.getSigned() << std::endl
+		<< "Sign Grade: " << obj.getSignGrade() << std::endl
+		<< "Exec Grade: " << obj.getExecGrade() << std::endl
+		<< "Target: " << obj.getTarget();
+	return (os);
 }
