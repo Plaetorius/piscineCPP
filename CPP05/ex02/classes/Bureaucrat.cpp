@@ -6,12 +6,12 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 18:07:36 by tgernez           #+#    #+#             */
-/*   Updated: 2023/07/04 15:55:18 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/07/05 11:44:06 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 #include <iostream>
 
 Bureaucrat::Bureaucrat() : _name("Unknown"), _grade(150)
@@ -88,6 +88,19 @@ void	Bureaucrat::signForm(Form &form)
 	catch (const std::exception& e)
 	{
 		std::cerr << this->_name << " couldn't sign the form " << form.getName() << " because " << e.what() << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(Form const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->_name << " executed form " << form.getName() << std::endl;
+	}
+	catch (const std::exception& e)
+	{
+		std::cerr << this->_name << " couldn't execute the form because " << e.what() << std::endl; 
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 18:07:34 by tgernez           #+#    #+#             */
-/*   Updated: 2023/07/04 16:22:58 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/07/05 11:38:45 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,12 @@ class Bureaucrat
 		void				promote();
 		void				demote();
 		void				signForm(Form &form);
+	
+		void				executeForm(Form const & form);
 
 
 	/*
-		Why do we use a const char* instead of a string?
+		Why do we use a const char* instead of a std::string?
 		1. Historically
 			Strings weren't introduced in CPP before 1998, but errors where
 			already handled with const char* (C-style strings). To maintain

@@ -6,24 +6,27 @@
 #    By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 12:29:58 by tgernez           #+#    #+#              #
-#    Updated: 2023/07/04 16:01:05 by tgernez          ###   ########.fr        #
+#    Updated: 2023/07/05 10:48:39 by tgernez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= form
+NAME	= many_forms
 CC		= c++
 DEP_FLAG= -MMD
 FLAGS	= -Wall -Wextra -Werror ${C98} ${DEP_FLAG}
 C98		= -std=c++98
 INCL	= -I includes
-SRCS	=	$(addsuffix .cpp,		\
-			$(addprefix srcs/,		\
-				main				\
+SRCS	=	$(addsuffix .cpp,			\
+			$(addprefix srcs/,			\
+				main					\
 			))
-CLAS	= 	$(addsuffix .cpp,		\
-			$(addprefix classes/,	\
-				Bureaucrat			\
-				Form				\
+CLAS	= 	$(addsuffix .cpp,			\
+			$(addprefix classes/,		\
+				Bureaucrat				\
+				AForm					\
+				PresidentialPardonForm	\
+				RobotomyRequestForm		\
+				ShrubberyCreationForm	\
 			))
 OBJS	= ${SRCS:.cpp=.o} ${CLAS:.cpp=.o}
 DEPS	= ${OBJS:.o=.d}
