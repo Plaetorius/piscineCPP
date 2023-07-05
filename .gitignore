@@ -55,3 +55,4 @@ script.sh
 *.log
 gfc.sh
 my_code
+*_shrubbery
