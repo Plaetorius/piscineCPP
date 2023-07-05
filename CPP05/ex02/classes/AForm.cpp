@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:55:42 by tgernez           #+#    #+#             */
-/*   Updated: 2023/07/05 11:36:22 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/07/05 12:55:27 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 #include "Bureaucrat.hpp"
 #include <iostream>
 
-Form::Form() : _name("Unknow Form"), _signed(false), _sign_grade(150), _exec_grade(150)
+AForm::AForm() : _name("Unknow AForm"), _signed(false), _sign_grade(150), _exec_grade(150)
 {
 	if (TEST_MODE)
-		std::cout << "Default Form constructor called" << std::endl;
+		std::cout << "Default AForm constructor called" << std::endl;
 }
 
-Form::Form(const Form &obj) :  _name(obj._name), _signed(obj._signed), _sign_grade(obj._sign_grade), _exec_grade(obj._exec_grade)
+AForm::AForm(const AForm &obj) :  _name(obj._name), _signed(obj._signed), _sign_grade(obj._sign_grade), _exec_grade(obj._exec_grade)
 {
 	if (TEST_MODE)
-		std::cout << "Copy Form constructor called" << std::endl;
+		std::cout << "Copy AForm constructor called" << std::endl;
 }
 
-Form& Form::operator=(const Form &rhs)
+AForm& AForm::operator=(const AForm &rhs)
 {
 	if (TEST_MODE)
-		std::cout << "Form Assignment operator called" << std::endl;
+		std::cout << "AForm Assignment operator called" << std::endl;
 	if (this == &rhs)
 		return (*this);
 	//All the other variables are consts
@@ -37,52 +37,52 @@ Form& Form::operator=(const Form &rhs)
 	return (*this);
 }
 
-Form::~Form()
+AForm::~AForm()
 {
 	if (TEST_MODE)
-		std::cout << "Form destructor called" << std::endl;
+		std::cout << "AForm destructor called" << std::endl;
 }
 
-Form::Form(const std::string& name, int sign_grade, int exec_grade) : _name(name), _signed(false), _sign_grade(sign_grade), _exec_grade(exec_grade)
+AForm::AForm(const std::string& name, int sign_grade, int exec_grade) : _name(name), _signed(false), _sign_grade(sign_grade), _exec_grade(exec_grade)
 {
 	if (TEST_MODE)
-		std::cout << "Form String Constructor called" << std::endl;
+		std::cout << "AForm String Constructor called" << std::endl;
 	if (sign_grade > 150 || exec_grade > 150)
-		throw (Form::GradeTooLowException());
+		throw (AForm::GradeTooLowException());
 	if (sign_grade < 1 || exec_grade < 1)
-		throw (Form::GradeTooHighException());
+		throw (AForm::GradeTooHighException());
 }
 
-const std::string	Form::getName() const
+const std::string	AForm::getName() const
 {
 	return (this->_name);
 }
 
-bool			Form::getSigned() const
+bool			AForm::getSigned() const
 {
 	return (this->_signed);
 }
-int			Form::getSignGrade() const
+int			AForm::getSignGrade() const
 {
 	return (this->_sign_grade);
 }
 
-int			Form::getExecGrade() const
+int			AForm::getExecGrade() const
 {
 	return (this->_exec_grade);
 }
 
-void				Form::beSigned(const Bureaucrat& bureaucrat)
+void				AForm::beSigned(const Bureaucrat& bureaucrat)
 {
 	const	int bureaucrat_grade = bureaucrat.getGrade();
 
 	std::cout << "beSigned called on form " << this->_name << std::endl;
 	if (this->_sign_grade < bureaucrat_grade)
-		throw Form::GradeTooLowException();
+		throw AForm::GradeTooLowException();
 	this->_signed = true;
 }
 
-std::ostream&	operator<<(std::ostream& os, const Form &obj)
+std::ostream&	operator<<(std::ostream& os, const AForm &obj)
 {
 	os << "Name: " << obj.getName() << std::endl
 		<< "Signed: " << obj.getSigned() << std::endl

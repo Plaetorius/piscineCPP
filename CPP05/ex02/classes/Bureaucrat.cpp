@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 18:07:36 by tgernez           #+#    #+#             */
-/*   Updated: 2023/07/05 11:44:06 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/07/05 12:55:44 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	Bureaucrat::demote()
 	std::cout << this->_name << " has been demoted to grade " << this->_grade << "! Looser!" << std::endl;
 }
 
-void	Bureaucrat::signForm(Form &form)
+void	Bureaucrat::signForm(AForm &form)
 {
 	try
 	{
@@ -91,7 +91,7 @@ void	Bureaucrat::signForm(Form &form)
 	}
 }
 
-void	Bureaucrat::executeForm(Form const & form)
+void	Bureaucrat::executeForm(AForm const & form)
 {
 	try
 	{

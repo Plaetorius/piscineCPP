@@ -6,19 +6,19 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 10:24:18 by tgernez           #+#    #+#             */
-/*   Updated: 2023/07/05 11:56:39 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/07/05 12:56:27 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 #include <iostream>
 
-PresidentialPardonForm::PresidentialPardonForm() : Form("PresidentialPardonForm", 25, 5), _target("default")
+PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5), _target("default")
 {
 	std::cout << "Default PresidentialPardonForm constructor called" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj) : Form(obj), _target(obj._target)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj) : AForm(obj), _target(obj._target)
 {
 	std::cout << "Copy PresidentialPardonForm constructor called" << std::endl;
 }
@@ -28,7 +28,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 	std::cout << "PresidentialPardonForm Assignment operator called" << std::endl;
 	if (this == &rhs)
 		return (*this);
-	this->Form::operator=(rhs);
+	this->AForm::operator=(rhs);
 	this->_target = rhs._target;
 	return (*this);
 }
@@ -38,7 +38,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 	std::cout << "PresidentialPardonForm destructor called" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : Form("PresidentialPardonForm", 25, 5), _target(target)
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AForm("PresidentialPardonForm", 25, 5), _target(target)
 {
 	std::cout << "PresidentialPardonForm String Constructor called" << std::endl;
 }
@@ -46,9 +46,9 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : Form
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	if (this->getSigned() == false)
-		throw Form::FormNotSigned();
+		throw AForm::FormNotSigned();
 	if (executor.getGrade() > this->getExecGrade())
-		throw Form::GradeTooHighException();
+		throw AForm::GradeTooHighException();
 	std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox. Enjoy!" << std::endl;
 }
 

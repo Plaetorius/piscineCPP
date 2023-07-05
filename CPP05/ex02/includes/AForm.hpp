@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 14:50:09 by tgernez           #+#    #+#             */
-/*   Updated: 2023/07/05 11:35:01 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/07/05 12:58:54 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 	private:
 		const std::string	_name;
@@ -27,12 +27,12 @@ class Form
 		const int			_sign_grade;
 		const int			_exec_grade;
 	public:
-		Form();
-		Form(const  Form &obj);
-		Form& operator=(const Form &rhs);
-		virtual ~Form(); //The destructor is turned virtual to make sure that we call the proper destructor (cf CPP04)
+		AForm();
+		AForm(const  AForm &obj);
+		AForm& operator=(const AForm &rhs);
+		virtual ~AForm(); //The destructor is turned virtual to make sure that we call the proper destructor (cf CPP04)
 
-		Form(const std::string& name, const int sign_grade, const int exec_grade);
+		AForm(const std::string& name, const int sign_grade, const int exec_grade);
 		const std::string	getName() const;
 		bool				getSigned() const;
 		int					getSignGrade() const;
@@ -72,6 +72,6 @@ class Form
 	};
 };
 
-std::ostream&	operator<<(std::ostream& os, const Form &obj);
+std::ostream&	operator<<(std::ostream& os, const AForm &obj);
 
 #endif

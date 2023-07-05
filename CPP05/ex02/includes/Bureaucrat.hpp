@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 18:07:34 by tgernez           #+#    #+#             */
-/*   Updated: 2023/07/05 11:38:45 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/07/05 12:58:23 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define BUREAUCRAT_H
 # include <string>
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -33,9 +33,9 @@ class Bureaucrat
 		int					getGrade() const;
 		void				promote();
 		void				demote();
-		void				signForm(Form &form);
+		void				signForm(AForm &form);
 	
-		void				executeForm(Form const & form);
+		void				executeForm(AForm const & form);
 
 
 	/*

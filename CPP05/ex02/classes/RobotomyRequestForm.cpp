@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 10:24:20 by tgernez           #+#    #+#             */
-/*   Updated: 2023/07/05 11:57:11 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/07/05 13:01:52 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 #include <iostream>
 #include "AForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : Form("RobotomyRequestForm", 72, 45), _target("default")
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45), _target("default")
 {
 	if (TEST_MODE)
 		std::cout << "Default RobotomyRequestForm constructor called" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj) : Form(obj), _target(obj._target)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj) : AForm(obj), _target(obj._target)
 {
 	if (TEST_MODE)
 		std::cout << "Copy RobotomyRequestForm constructor called" << std::endl;
@@ -32,7 +32,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &r
 		std::cout << "RobotomyRequestForm Assignment operator called" << std::endl;
 	if (this == &rhs)
 		return (*this);
-	this->Form::operator=(rhs);
+	this->AForm::operator=(rhs);
 	this->_target = rhs._target;
 	return (*this);
 }
@@ -43,7 +43,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 		std::cout << "RobotomyRequestForm destructor called" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : Form("RobotomyRequestForm", 72, 45), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("RobotomyRequestForm", 72, 45), _target(target)
 {
 	if (TEST_MODE)
 		std::cout << "RobotomyRequestForm String Constructor called" << std::endl;
@@ -57,11 +57,11 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 		nearby students during the correction.
 	*/
 	if (this->getSigned() == false)
-		throw Form::FormNotSigned();
+		throw AForm::FormNotSigned();
 	if (executor.getGrade() > this->getExecGrade())
-		throw Form::GradeTooHighException();
+		throw AForm::GradeTooHighException();
 	std::cout << "*weird drilling noises echoing against the walls*" << std::endl;
-	static int random;
+	static int random = 0;
 	
 	if (random % 2)
 		std::cout << this->_target << " has been successfully robotomized!" << std::endl;

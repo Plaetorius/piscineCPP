@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 10:24:22 by tgernez           #+#    #+#             */
-/*   Updated: 2023/07/05 11:57:18 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/07/05 12:57:25 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 #include "AForm.hpp"
 
 
-ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyCreationForm", 145, 137), _target("default")
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137), _target("default")
 {
 	if (TEST_MODE)
 		std::cout << "Default ShrubberyCreationForm constructor called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &obj) : Form(obj), _target(obj._target)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &obj) : AForm(obj), _target(obj._target)
 {
 	if (TEST_MODE)
 		std::cout << "Copy ShrubberyCreationForm constructor called" << std::endl;
@@ -34,7 +34,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 		std::cout << "ShrubberyCreationForm Assignment operator called" << std::endl;
 	if (this == &rhs)
 		return (*this);
-	this->Form::operator=(rhs);
+	this->AForm::operator=(rhs);
 	this->_target = rhs._target;
 	return (*this);
 }
@@ -45,7 +45,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 		std::cout << "ShrubberyCreationForm destructor called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : Form("ShrubberyCreationForm", 145, 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
 	if (TEST_MODE)
 		std::cout << "RobotomyRequestForm String Constructor called" << std::endl;
@@ -54,9 +54,9 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : Form("
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	if (this->getSigned() == false)
-		throw Form::FormNotSigned();
+		throw AForm::FormNotSigned();
 	if (executor.getGrade() > this->getExecGrade())
-		throw Form::GradeTooHighException();
+		throw AForm::GradeTooHighException();
 	const std::string filename = this->_target + "_shrubbery";
 	const std::string tree =
 		"  ^   \n"

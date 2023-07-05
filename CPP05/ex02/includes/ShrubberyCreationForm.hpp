@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 10:24:16 by tgernez           #+#    #+#             */
-/*   Updated: 2023/07/05 11:50:32 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/07/05 12:58:45 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "Bureaucrat.hpp"
 # include <string>
 
-class ShrubberyCreationForm : public Form
+class ShrubberyCreationForm : public AForm
 {
 	private:
 		std::string	_target;

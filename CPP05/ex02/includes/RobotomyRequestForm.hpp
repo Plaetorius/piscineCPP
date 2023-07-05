@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 10:24:14 by tgernez           #+#    #+#             */
-/*   Updated: 2023/07/05 11:50:24 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/07/05 12:58:39 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "Bureaucrat.hpp"
 # include <string>
 
-class RobotomyRequestForm : public Form
+class RobotomyRequestForm : public AForm
 {
 	private:
 		std::string	_target;

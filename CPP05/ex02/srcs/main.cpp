@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 18:07:32 by tgernez           #+#    #+#             */
-/*   Updated: 2023/07/05 12:31:21 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/07/05 13:02:25 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,7 +149,7 @@ int main()
 		std::cout << form_2 << std::endl;
 		boss.signForm(form_2);
 		boss.executeForm(form_2);
-
+		boss.executeForm(form_2); //To check if it fails 1/2 times
 
 		ShrubberyCreationForm form_3("target_form3");
 		std::cout << form_3 << std::endl;
