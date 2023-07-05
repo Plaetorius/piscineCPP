@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:55:42 by tgernez           #+#    #+#             */
-/*   Updated: 2023/07/04 16:18:01 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/07/05 10:50:56 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ Form::~Form()
 
 Form::Form(const std::string& name, int sign_grade, int exec_grade) : _name(name), _signed(false), _sign_grade(sign_grade), _exec_grade(exec_grade)
 {
+	std::cout << "Form String Constructor called" << std::endl;
 	if (sign_grade > 150 || exec_grade > 150)
 		throw (Form::GradeTooLowException());
 	if (sign_grade < 1 || exec_grade < 1)

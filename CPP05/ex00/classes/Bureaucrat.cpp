@@ -6,7 +6,7 @@
 /*   By: tgernez <tgernez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 18:07:36 by tgernez           #+#    #+#             */
-/*   Updated: 2023/07/04 12:16:12 by tgernez          ###   ########.fr       */
+/*   Updated: 2023/07/05 10:51:12 by tgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ Bureaucrat::~Bureaucrat()
 {
 	std::cout << "Bureaucrat destructor called" << std::endl;
 }
-
 
 void	Bureaucrat::tryCatchGrade(int grade)
 {
